@@ -19,8 +19,8 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": "../..", 
     "paths": {
-      "@my-ds/react": ["packages/react/src"],
-      "@my-ds/core": ["packages/core"]
+      "@loom/react": ["packages/react/src"],
+      "@loom/core": ["packages/core"]
     }
   }
 }
