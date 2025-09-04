@@ -6,11 +6,13 @@ A modern, open-source design system inspired by Tailwind CSS and shadcn/ui. Loom
 
 ## Features
 - **Design Tokens:** Centralized color, spacing, and typography tokens.
-- **React Components:** Accessible, customizable UI components (Button, Input, Alert, Calendar).
+- **React Components:** 20+ accessible, customizable UI components including Button, Input, Alert, Calendar, Card, Modal, and more.
 - **Utility Primitives:** (Planned) Utility CSS classes for rapid prototyping.
 - **TypeScript Support:** Fully typed for safety and autocompletion.
 - **Monorepo:** All packages managed together for easy contribution and updates.
 - **Font Integration:** Seamless font family integration with your app.
+- **Responsive Design:** All components work perfectly on mobile, tablet, and desktop.
+- **Accessibility:** Built with ARIA support and keyboard navigation.
 
 ---
 
@@ -57,15 +59,30 @@ module.exports = {
 
 ### Basic Setup
 ```tsx
-import { Button, Input, Alert, Calendar } from '@loom/react';
+import { 
+  Button, Input, Alert, Calendar, Card, Modal, 
+  Grid, Text, Title, Range, Table, Pagination 
+} from '@loom/react';
 
 function App() {
   return (
     <div>
-      <Button variant="primary">Click me</Button>
-      <Input title="Email" placeholder="Enter your email" />
-      <Alert message="Welcome to Loom!" type="info" />
-      <Calendar onDateSelect={(date) => console.log(date)} />
+      <Title level="h1">Welcome to Loom</Title>
+      <Text variant="lead">Build beautiful UIs with our design system</Text>
+      
+      <Grid columns={3} gap="md">
+        <Card title="Feature 1" variant="elevated">
+          <Text>Amazing component library</Text>
+        </Card>
+        <Card title="Feature 2" variant="elevated">
+          <Text>TypeScript support</Text>
+        </Card>
+        <Card title="Feature 3" variant="elevated">
+          <Text>Responsive design</Text>
+        </Card>
+      </Grid>
+      
+      <Button variant="primary" size="lg">Get Started</Button>
     </div>
   );
 }
@@ -73,25 +90,53 @@ function App() {
 
 ### Advanced Usage with Props
 ```tsx
-import { Input, Alert, Calendar } from '@loom/react';
+import { 
+  Input, Alert, Calendar, Modal, Card, Grid, 
+  Range, Table, Pagination, SearchInput, Dropdown 
+} from '@loom/react';
 
 function AdvancedExample() {
   const [selectedDate, setSelectedDate] = useState(new Date());
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const tableData = [
+    { name: 'John Doe', age: 25, email: 'john@example.com' },
+    { name: 'Jane Smith', age: 30, email: 'jane@example.com' }
+  ];
+
+  const tableColumns = [
+    { key: 'name', title: 'Name', sortable: true },
+    { key: 'age', title: 'Age', align: 'center' },
+    { key: 'email', title: 'Email' }
+  ];
 
   return (
     <div>
-      {/* Input with validation */}
-      <Input
-        title="Email Address"
-        placeholder="Enter your email"
-        regex={/^[^@\s]+@[^@\s]+\.[^@\s]+$/}
-        type="danger"
-        errorText="Please enter a valid email."
-        width="300px"
-        titleSize={16}
-        titleWeight={600}
-        onChange={(val, isValid) => console.log(val, isValid)}
-      />
+      <Grid columns={2} gap="lg">
+        {/* Input with validation */}
+        <Card title="Form Input" variant="outlined">
+          <Input
+            title="Email Address"
+            placeholder="Enter your email"
+            regex={/^[^@\s]+@[^@\s]+\.[^@\s]+$/}
+            type="danger"
+            errorText="Please enter a valid email."
+            onChange={(val, isValid) => console.log(val, isValid)}
+          />
+        </Card>
+
+        {/* Range Slider */}
+        <Card title="Volume Control" variant="outlined">
+          <Range
+            title="Volume"
+            description="Adjust the volume level"
+            min={0}
+            max={100}
+            onChange={(val) => console.log(val)}
+          />
+        </Card>
+      </Grid>
 
       {/* Alert with custom styling */}
       <Alert
@@ -99,19 +144,39 @@ function AdvancedExample() {
         message="Your changes have been saved successfully."
         type="success"
         closable
-        titleSize={18}
-        titleWeight={700}
         onClose={() => console.log('Alert closed')}
       />
 
-      {/* Calendar with selection */}
-      <Calendar
-        selectedDate={selectedDate}
-        onDateSelect={setSelectedDate}
-        titleSize={20}
-        titleWeight={700}
-        customColor="#1f2937"
-      />
+      {/* Table with Pagination */}
+      <Card title="User Data" variant="elevated">
+        <Table
+          columns={tableColumns}
+          data={tableData}
+          striped
+          hoverable
+        />
+        <Pagination
+          currentPage={currentPage}
+          totalPages={10}
+          onPageChange={setCurrentPage}
+          size="md"
+        />
+      </Card>
+
+      {/* Modal */}
+      <Button onClick={() => setIsModalOpen(true)}>
+        Open Modal
+      </Button>
+      
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Settings"
+        size="md"
+        backdropBlur
+      >
+        <p>Modal content goes here...</p>
+      </Modal>
     </div>
   );
 }
@@ -121,15 +186,19 @@ function AdvancedExample() {
 
 ## Components
 
-### Button
-Simple button component with variants.
+### Core Components
+
+#### Button
+Enhanced button with variants, sizes, loading states, and icons.
 ```tsx
-<Button variant="primary">Primary</Button>
-<Button variant="secondary">Secondary</Button>
-<Button variant="outline">Outline</Button>
+<Button variant="primary" size="lg" loading icon="🚀">
+  Click me
+</Button>
+<Button variant="outline" size="sm">Secondary</Button>
+<Button variant="danger" fullWidth>Delete</Button>
 ```
 
-### Input
+#### Input
 Advanced input with validation, styling, and error handling.
 ```tsx
 <Input
@@ -143,7 +212,122 @@ Advanced input with validation, styling, and error handling.
 />
 ```
 
-### Alert
+#### Text & Title
+Typography components for consistent text styling.
+```tsx
+<Title level="h1" align="center">Main Heading</Title>
+<Text variant="lead" weight="medium">Lead paragraph text</Text>
+<Text variant="caption" color="#666">Caption text</Text>
+```
+
+### Layout Components
+
+#### Grid
+Responsive grid system for layouts.
+```tsx
+<Grid columns={3} gap="lg" responsive>
+  <Card>Item 1</Card>
+  <Card>Item 2</Card>
+  <Card>Item 3</Card>
+</Grid>
+```
+
+#### Card
+Flexible card component with header, content, and footer.
+```tsx
+<Card title="Card Title" variant="elevated" hoverable>
+  <Text>Card content goes here</Text>
+</Card>
+```
+
+### Data Display
+
+#### Table
+Feature-rich table with sorting, pagination, and responsive design.
+```tsx
+<Table
+  columns={[
+    { key: 'name', title: 'Name', sortable: true },
+    { key: 'age', title: 'Age', align: 'center' }
+  ]}
+  data={userData}
+  striped
+  hoverable
+/>
+```
+
+#### Calendar
+Interactive calendar with date selection and current date highlighting.
+```tsx
+<Calendar
+  selectedDate={new Date()}
+  onDateSelect={(date) => console.log('Selected:', date)}
+  titleSize={20}
+  titleWeight={700}
+/>
+```
+
+### Form Components
+
+#### Range/Slider
+Customizable range slider with labels and value display.
+```tsx
+<Range
+  title="Volume"
+  description="Adjust the volume level"
+  min={0}
+  max={100}
+  onChange={(val) => console.log(val)}
+/>
+```
+
+#### DateInput
+Date and datetime input with validation.
+```tsx
+<DateInput
+  title="Select Date"
+  includeTime={true}
+  onChange={(date) => console.log(date)}
+/>
+```
+
+#### Radio
+Radio button groups with multiple layout options.
+```tsx
+<Radio
+  name="choice"
+  options={[
+    { value: 'a', label: 'Option A' },
+    { value: 'b', label: 'Option B' }
+  ]}
+  direction="horizontal"
+  variant="card"
+/>
+```
+
+#### Dropdown
+Select dropdown with search and keyboard navigation.
+```tsx
+<Dropdown
+  options={options}
+  onChange={(value, option) => console.log(value, option)}
+  variant="filled"
+/>
+```
+
+#### SearchInput
+Search input with dropdown suggestions.
+```tsx
+<SearchInput
+  options={searchOptions}
+  onSelect={(option) => console.log(option)}
+  loading={isSearching}
+/>
+```
+
+### Feedback Components
+
+#### Alert
 Notification component with different types and close functionality.
 ```tsx
 <Alert
@@ -155,15 +339,56 @@ Notification component with different types and close functionality.
 />
 ```
 
-### Calendar
-Interactive calendar with date selection and current date highlighting.
+#### Modal
+Modal dialog with backdrop blur and multiple sizes.
 ```tsx
-<Calendar
-  selectedDate={new Date()}
-  onDateSelect={(date) => console.log('Selected:', date)}
-  titleSize={20}
-  titleWeight={700}
+<Modal
+  isOpen={isOpen}
+  onClose={() => setIsOpen(false)}
+  title="Settings"
+  size="md"
+  backdropBlur
+>
+  <p>Modal content</p>
+</Modal>
+```
+
+### Navigation Components
+
+#### Pagination
+Complete pagination with customizable display options.
+```tsx
+<Pagination
+  currentPage={currentPage}
+  totalPages={totalPages}
+  onPageChange={setCurrentPage}
+  showFirstLast
+  maxVisiblePages={5}
 />
+```
+
+#### Accordion
+Collapsible content sections with keyboard navigation.
+```tsx
+<Accordion
+  items={[
+    { id: '1', title: 'Section 1', content: <p>Content 1</p> },
+    { id: '2', title: 'Section 2', content: <p>Content 2</p> }
+  ]}
+  allowMultiple
+  variant="bordered"
+/>
+```
+
+### Utility Components
+
+#### Lists
+Styled lists with customizable spacing and styles.
+```tsx
+<Lists type="ul" style="disc" spacing="normal">
+  <ListItem>Item 1</ListItem>
+  <ListItem>Item 2</ListItem>
+</Lists>
 ```
 
 ---

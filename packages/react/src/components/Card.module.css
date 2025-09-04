@@ -1,0 +1,97 @@
+.card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.2s;
+  position: relative;
+}
+
+/* Variants */
+.default {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.elevated {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.outlined {
+  border: 2px solid #e5e7eb;
+  box-shadow: none;
+}
+
+.filled {
+  background-color: #f9fafb;
+  box-shadow: none;
+}
+
+/* Sizes */
+.sm {
+  padding: 12px;
+}
+
+.md {
+  padding: 16px;
+}
+
+.lg {
+  padding: 24px;
+}
+
+/* States */
+.hoverable:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  transform: translateY(-1px);
+}
+
+/* Sections */
+.header {
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.title {
+  margin: 0 0 4px 0;
+  color: #111827;
+  font-weight: 600;
+}
+
+.subtitle {
+  margin: 0;
+  color: #6b7280;
+  font-weight: 400;
+}
+
+.content {
+  flex: 1;
+}
+
+.footer {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sm {
+    padding: 8px;
+  }
+  
+  .md {
+    padding: 12px;
+  }
+  
+  .lg {
+    padding: 16px;
+  }
+}

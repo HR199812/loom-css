@@ -1,9 +1,23 @@
 "use client";
-import { Alert, Button, Calendar, Input } from "@loom/react";
+import {
+  Alert,
+  Button,
+  Calendar,
+  Input,
+  Title,
+  Range,
+  Lists,
+  ListItem,
+  Table
+} from "@loom/react";
 
 export default function Home() {
   return (
     <main className="p-10">
+      <Title level="h1" align="center" color="#333">
+        My Title
+      </Title>
+
       <h1 className="text-2xl font-bold">My Design System</h1>
       <Button>Click Me</Button>
       <Input
@@ -30,6 +44,29 @@ export default function Home() {
         titleSize={20}
         titleWeight={700}
       />
+
+      <Table
+        columns={[
+          { key: "name", title: "Name", sortable: true },
+          { key: "age", title: "Age", align: "center" },
+        ]}
+        data={[{ name: "John", age: 25 }]}
+        striped
+        hoverable
+      />
+
+      <Range
+        title="Volume"
+        description="Adjust the volume level"
+        min={0}
+        max={100}
+        onChange={(val) => console.log(val)}
+      />
+
+      <Lists type="ul" style="disc" spacing="normal">
+        <ListItem>Item 1</ListItem>
+        <ListItem>Item 2</ListItem>
+      </Lists>
     </main>
   );
 }

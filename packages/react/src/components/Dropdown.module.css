@@ -1,0 +1,173 @@
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.dropdown {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+  outline: none;
+}
+
+.dropdown:hover:not(.disabled) {
+  border-color: #3b82f6;
+}
+
+.dropdown:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.dropdown.disabled {
+  background-color: #f9fafb;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.label {
+  flex: 1;
+  color: #374151;
+  font-weight: 500;
+}
+
+.icon {
+  transition: transform 0.2s;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.icon.open {
+  transform: rotate(180deg);
+}
+
+.menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  z-index: 50;
+  overflow-y: auto;
+  max-height: 200px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  cursor: pointer;
+  border-bottom: 1px solid #f3f4f6;
+  transition: background-color 0.2s;
+}
+
+.option:last-child {
+  border-bottom: none;
+}
+
+.option:hover:not(.disabled),
+.option.highlighted {
+  background-color: #f3f4f6;
+}
+
+.option.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.optionIcon {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+.optionLabel {
+  flex: 1;
+  color: #374151;
+  font-weight: 500;
+}
+
+/* Sizes */
+.sm {
+  padding: 8px 12px;
+  font-size: 12px;
+}
+
+.sm .option {
+  padding: 8px 12px;
+}
+
+.md {
+  padding: 12px 16px;
+  font-size: 14px;
+}
+
+.md .option {
+  padding: 12px 16px;
+}
+
+.lg {
+  padding: 16px 20px;
+  font-size: 16px;
+}
+
+.lg .option {
+  padding: 16px 20px;
+}
+
+/* Variants */
+.filled {
+  background-color: #f9fafb;
+}
+
+.filled:hover:not(.disabled) {
+  background-color: #f3f4f6;
+}
+
+.outlined {
+  border-width: 1px;
+}
+
+.outlined:hover:not(.disabled) {
+  border-width: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sm {
+    padding: 6px 10px;
+  }
+  
+  .sm .option {
+    padding: 6px 10px;
+  }
+  
+  .md {
+    padding: 10px 12px;
+  }
+  
+  .md .option {
+    padding: 10px 12px;
+  }
+  
+  .lg {
+    padding: 12px 16px;
+  }
+  
+  .lg .option {
+    padding: 12px 16px;
+  }
+}
