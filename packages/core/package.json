@@ -1,0 +1,17 @@
+{
+  "name": "@loom/core",
+  "version": "0.0.1",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "index.ts",
+    "tokens.json"
+  ],
+  "description": "Loom Design System core tokens and utilities.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/loom-design/loom"
+  },
+  "author": "Loom Contributors"
+}
