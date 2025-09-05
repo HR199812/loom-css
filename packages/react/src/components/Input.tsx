@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect, useContext, createContext } from "react";
 import styles from "./Input.module.css";
 

@@ -1,3 +1,4 @@
+"use client";
 import React, { useContext } from "react";
 import styles from "./Text.module.css";
 
@@ -26,6 +27,7 @@ export interface TextProps {
   truncate?: boolean;
   italic?: boolean;
   underline?: boolean;
+  style?: React.CSSProperties;
 }
 
 const variantStyles: Record<TextVariant, string> = {

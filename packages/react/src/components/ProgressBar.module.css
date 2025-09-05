@@ -1,0 +1,205 @@
+.progressBar {
+  width: 100%;
+}
+
+.progressHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.progressLabel {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.progressPercentage {
+  font-size: 14px;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.progressTrack {
+  width: 100%;
+  background: #e5e7eb;
+  overflow: hidden;
+  position: relative;
+}
+
+.progressFill {
+  height: 100%;
+  transition: width 0.3s ease;
+  position: relative;
+}
+
+/* Sizes */
+.sm .progressTrack {
+  height: 4px;
+}
+
+.sm .progressLabel,
+.sm .progressPercentage {
+  font-size: 12px;
+}
+
+.md .progressTrack {
+  height: 8px;
+}
+
+.md .progressLabel,
+.md .progressPercentage {
+  font-size: 14px;
+}
+
+.lg .progressTrack {
+  height: 12px;
+}
+
+.lg .progressLabel,
+.lg .progressPercentage {
+  font-size: 16px;
+}
+
+/* Shapes */
+.rounded .progressTrack {
+  border-radius: 4px;
+}
+
+.rounded .progressFill {
+  border-radius: 4px;
+}
+
+.square .progressTrack {
+  border-radius: 0;
+}
+
+.square .progressFill {
+  border-radius: 0;
+}
+
+.pill .progressTrack {
+  border-radius: 9999px;
+}
+
+.pill .progressFill {
+  border-radius: 9999px;
+}
+
+/* Variants */
+.default .progressFill {
+  background: #6b7280;
+}
+
+.primary .progressFill {
+  background: #3b82f6;
+}
+
+.success .progressFill {
+  background: #10b981;
+}
+
+.warning .progressFill {
+  background: #f59e0b;
+}
+
+.danger .progressFill {
+  background: #ef4444;
+}
+
+.info .progressFill {
+  background: #06b6d4;
+}
+
+/* Animations */
+.animated .progressFill {
+  animation: progressAnimation 2s ease-in-out infinite;
+}
+
+.striped .progressFill {
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 1rem 1rem;
+  animation: progressStripes 1s linear infinite;
+}
+
+@keyframes progressAnimation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes progressStripes {
+  0% {
+    background-position: 1rem 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .lg .progressTrack {
+    height: 10px;
+  }
+  
+  .lg .progressLabel,
+  .lg .progressPercentage {
+    font-size: 15px;
+  }
+  
+  .md .progressTrack {
+    height: 6px;
+  }
+  
+  .md .progressLabel,
+  .md .progressPercentage {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .lg .progressTrack {
+    height: 8px;
+  }
+  
+  .lg .progressLabel,
+  .lg .progressPercentage {
+    font-size: 14px;
+  }
+  
+  .md .progressTrack {
+    height: 5px;
+  }
+  
+  .md .progressLabel,
+  .md .progressPercentage {
+    font-size: 12px;
+  }
+  
+  .sm .progressTrack {
+    height: 3px;
+  }
+  
+  .sm .progressLabel,
+  .sm .progressPercentage {
+    font-size: 11px;
+  }
+}
+

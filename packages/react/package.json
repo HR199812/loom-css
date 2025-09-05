@@ -5,8 +5,8 @@
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts --jsx react",
-    "dev": "tsup src/index.ts --watch --format esm,cjs --dts --jsx react"
+    "build": "tsup",
+    "dev": "tsup --watch"
   },
   "dependencies": {
     "react": "^18.0.0",

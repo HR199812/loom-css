@@ -6,13 +6,16 @@ A modern, open-source design system inspired by Tailwind CSS and shadcn/ui. Loom
 
 ## Features
 - **Design Tokens:** Centralized color, spacing, and typography tokens.
-- **React Components:** 20+ accessible, customizable UI components including Button, Input, Alert, Calendar, Card, Modal, and more.
+- **React Components:** 25+ accessible, customizable UI components including Button, Input, Alert, Calendar, Card, Modal, PaymentPlan, Chat, BarChart, and more.
 - **Utility Primitives:** (Planned) Utility CSS classes for rapid prototyping.
 - **TypeScript Support:** Fully typed for safety and autocompletion.
 - **Monorepo:** All packages managed together for easy contribution and updates.
 - **Font Integration:** Seamless font family integration with your app.
 - **Responsive Design:** All components work perfectly on mobile, tablet, and desktop.
 - **Accessibility:** Built with ARIA support and keyboard navigation.
+- **Payment Integration:** Built-in payment plan components with card processing.
+- **Data Visualization:** Chart components for analytics and reporting.
+- **Real-time Communication:** Chat components for messaging and support.
 
 ---
 
@@ -61,7 +64,8 @@ module.exports = {
 ```tsx
 import { 
   Button, Input, Alert, Calendar, Card, Modal, 
-  Grid, Text, Title, Range, Table, Pagination 
+  Grid, Text, Title, Range, Table, Pagination,
+  PaymentPlan, Chat, BarChart
 } from '@loom/react';
 
 function App() {
@@ -92,7 +96,8 @@ function App() {
 ```tsx
 import { 
   Input, Alert, Calendar, Modal, Card, Grid, 
-  Range, Table, Pagination, SearchInput, Dropdown 
+  Range, Table, Pagination, SearchInput, Dropdown,
+  PaymentPlan, Chat, BarChart
 } from '@loom/react';
 
 function AdvancedExample() {
@@ -163,6 +168,56 @@ function AdvancedExample() {
         />
       </Card>
 
+      {/* Payment Plans */}
+      <Grid columns={3} gap="lg">
+        <PaymentPlan
+          title="Basic Plan"
+          description="Perfect for getting started"
+          price={9.99}
+          features={["Up to 5 projects", "Basic support", "1GB storage"]}
+          onUpgrade={() => console.log("Upgraded to Basic")}
+        />
+        <PaymentPlan
+          title="Pro Plan"
+          description="Most popular choice"
+          price={19.99}
+          features={["Unlimited projects", "Priority support", "10GB storage"]}
+          popular
+          onUpgrade={() => console.log("Upgraded to Pro")}
+        />
+        <PaymentPlan
+          title="Enterprise"
+          description="For large teams"
+          price={49.99}
+          features={["Everything in Pro", "Team collaboration", "100GB storage"]}
+          onUpgrade={() => console.log("Upgraded to Enterprise")}
+        />
+      </Grid>
+
+      {/* Chat Component */}
+      <Chat
+        messages={[
+          { id: "1", text: "Hello! How can I help?", sender: "bot", timestamp: new Date() },
+          { id: "2", text: "I need support", sender: "user", timestamp: new Date() }
+        ]}
+        onSendMessage={(msg) => console.log("Sent:", msg)}
+        placeholder="Type your message..."
+      />
+
+      {/* Bar Chart */}
+      <BarChart
+        title="Quarterly Performance"
+        data={[
+          { label: "Q1", value: 85, description: "Strong start" },
+          { label: "Q2", value: 92, description: "Great growth" },
+          { label: "Q3", value: 78, description: "Steady progress" },
+          { label: "Q4", value: 95, description: "Year-end success" }
+        ]}
+        showValues={true}
+        showDescriptions={true}
+        orientation="vertical"
+      />
+
       {/* Modal */}
       <Button onClick={() => setIsModalOpen(true)}>
         Open Modal
@@ -177,6 +232,37 @@ function AdvancedExample() {
       >
         <p>Modal content goes here...</p>
       </Modal>
+
+      {/* Payment Plans */}
+      <Grid columns={3} gap="lg">
+        {paymentPlans.map((plan, index) => (
+          <PaymentPlan
+            key={index}
+            title={plan.title}
+            price={plan.price}
+            features={plan.features}
+            popular={plan.popular}
+            onUpgrade={() => console.log(`Upgrading to ${plan.title}`)}
+          />
+        ))}
+      </Grid>
+
+      {/* Chat Interface */}
+      <Chat
+        messages={chatMessages}
+        onSendMessage={handleSendMessage}
+        showAvatars={true}
+        showTimestamps={true}
+      />
+
+      {/* Bar Chart */}
+      <BarChart
+        title="Performance Metrics"
+        data={chartData}
+        showValues={true}
+        showDescriptions={true}
+        orientation="vertical"
+      />
     </div>
   );
 }
@@ -390,6 +476,58 @@ Styled lists with customizable spacing and styles.
   <ListItem>Item 2</ListItem>
 </Lists>
 ```
+
+### Business Components
+
+#### PaymentPlan
+Professional payment plan cards with features, pricing, and upgrade functionality.
+```tsx
+<PaymentPlan
+  title="Pro Plan"
+  price={29}
+  period="/month"
+  description="Most popular choice"
+  features={[
+    { name: "Unlimited projects", included: true },
+    { name: "Priority support", included: true },
+    { name: "Advanced analytics", included: true }
+  ]}
+  popular={true}
+  onUpgrade={() => console.log("Upgrading...")}
+  variant="elevated"
+/>
+```
+
+#### Chat
+Real-time chat interface with message history, avatars, and timestamps.
+```tsx
+<Chat
+  messages={chatMessages}
+  onSendMessage={handleSendMessage}
+  placeholder="Type your message..."
+  showAvatars={true}
+  showTimestamps={true}
+  botName="Support Bot"
+  userName="You"
+/>
+```
+
+#### BarChart
+Data visualization component with customizable bars, labels, and descriptions.
+```tsx
+<BarChart
+  title="Quarterly Performance"
+  data={[
+    { label: "Q1", value: 85, description: "Strong start", color: "#3b82f6" },
+    { label: "Q2", value: 92, description: "Continued growth", color: "#10b981" }
+  ]}
+  showValues={true}
+  showDescriptions={true}
+  orientation="vertical"
+  variant="default"
+/>
+```
+
 
 ---
 

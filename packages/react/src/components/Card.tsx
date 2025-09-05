@@ -1,3 +1,4 @@
+"use client";
 import React, { useContext } from "react";
 import styles from "./Card.module.css";
 
@@ -25,6 +26,7 @@ export interface CardProps {
   subtitleSize?: number;
   subtitleWeight?: number | string;
   onClick?: () => void;
+  style?: React.CSSProperties;
 }
 
 const variantStyles: Record<string, string> = {
@@ -57,6 +59,7 @@ export const Card: React.FC<CardProps> = ({
   subtitleSize = 14,
   subtitleWeight = 400,
   onClick,
+  style,
 }) => {
   const { fontFamily } = useLoomConfig();
   const effectiveFontFamily = fontFamily || "var(--loom-font-family)";
@@ -74,6 +77,7 @@ export const Card: React.FC<CardProps> = ({
     fontFamily: effectiveFontFamily,
     borderColor: customBorder || undefined,
     color: customColor || undefined,
+    ...(style || {}),
   };
 
   return (

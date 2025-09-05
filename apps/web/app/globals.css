@@ -1,16 +1,78 @@
-@import "../../../packages/react/src/components/Input.module.css";
+/* Import Loom Design System Core Utilities */
+@import "@loom/core/loom-utilities.css";
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Loom Design System Tokens */
   --loom-font-family: 'Rubik', Inter, Segoe UI, Arial, sans-serif;
+  
+  /* Colors */
+  --loom-color-primary: #3b82f6;
+  --loom-color-secondary: #64748b;
+  --loom-color-success: #10b981;
+  --loom-color-warning: #f59e0b;
+  --loom-color-error: #ef4444;
+  --loom-color-background: #ffffff;
+  --loom-color-foreground: #0f172a;
+  --loom-color-muted: #f1f5f9;
+  --loom-color-accent: #f1f5f9;
+  --loom-color-destructive: #ef4444;
+  --loom-color-border: #e2e8f0;
+  --loom-color-input: #e2e8f0;
+  --loom-color-ring: #3b82f6;
+  
+  /* Spacing */
+  --loom-spacing-xs: 0.25rem;
+  --loom-spacing-sm: 0.5rem;
+  --loom-spacing-md: 1rem;
+  --loom-spacing-lg: 1.5rem;
+  --loom-spacing-xl: 2rem;
+  --loom-spacing-2xl: 3rem;
+  
+  /* Border Radius */
+  --loom-radius-sm: 0.125rem;
+  --loom-radius-md: 0.375rem;
+  --loom-radius-lg: 0.5rem;
+  --loom-radius-xl: 0.75rem;
+  --loom-radius-2xl: 1rem;
+  
+  /* Shadows */
+  --loom-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --loom-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --loom-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --loom-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  
+  /* Legacy variables for compatibility */
+  --background: var(--loom-color-background);
+  --foreground: var(--loom-color-foreground);
+}
+
+/* Dark Theme */
+.dark {
+  --loom-color-background: #0f172a;
+  --loom-color-foreground: #f8fafc;
+  --loom-color-muted: #1e293b;
+  --loom-color-accent: #1e293b;
+  --loom-color-border: #334155;
+  --loom-color-input: #334155;
+  
+  /* Legacy variables for compatibility */
+  --background: var(--loom-color-background);
+  --foreground: var(--loom-color-foreground);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #ededed;
-    --foreground: #0a0a0a;
+  :root:not(.light) {
+    --loom-color-background: #0f172a;
+    --loom-color-foreground: #f8fafc;
+    --loom-color-muted: #1e293b;
+    --loom-color-accent: #1e293b;
+    --loom-color-border: #334155;
+    --loom-color-input: #334155;
+    
+    /* Legacy variables for compatibility */
+    --background: var(--loom-color-background);
+    --foreground: var(--loom-color-foreground);
   }
 }
 

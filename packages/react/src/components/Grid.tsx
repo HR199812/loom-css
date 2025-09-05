@@ -1,3 +1,4 @@
+"use client";
 import React, { useContext } from "react";
 import styles from "./Grid.module.css";
 
@@ -16,6 +17,7 @@ export interface GridProps {
   className?: string;
   customColor?: string;
   customBorder?: string;
+  style?: React.CSSProperties;
 }
 
 const gapStyles: Record<string, string> = {
@@ -33,6 +35,7 @@ export const Grid: React.FC<GridProps> = ({
   className,
   customColor,
   customBorder,
+  style,
 }) => {
   const { fontFamily } = useLoomConfig();
   const effectiveFontFamily = fontFamily || "var(--loom-font-family)";
@@ -49,6 +52,7 @@ export const Grid: React.FC<GridProps> = ({
     gridTemplateColumns: `repeat(${columns}, 1fr)`,
     color: customColor || undefined,
     borderColor: customBorder || undefined,
+    ...(style || {}),
   };
 
   return (

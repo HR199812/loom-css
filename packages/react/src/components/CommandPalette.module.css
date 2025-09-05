@@ -1,0 +1,231 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20vh 20px 0;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.commandPalette {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 640px;
+  max-height: 70vh;
+  overflow: hidden;
+  transform: scale(0.95);
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+
+.commandPalette.open {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.header {
+  padding: 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.searchInput:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.content {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.commandList {
+  padding: 8px 0;
+}
+
+.group {
+  margin-bottom: 16px;
+}
+
+.group:last-child {
+  margin-bottom: 0;
+}
+
+.groupHeader {
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.commandItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.commandItem:hover {
+  background: #f3f4f6;
+}
+
+.commandItem.selected {
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.commandIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: #6b7280;
+}
+
+.commandItem.selected .commandIcon {
+  color: #3b82f6;
+}
+
+.commandContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.commandTitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111827;
+  margin-bottom: 2px;
+}
+
+.commandItem.selected .commandTitle {
+  color: #1d4ed8;
+}
+
+.commandDescription {
+  font-size: 12px;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+.emptyState {
+  padding: 32px 16px;
+  text-align: center;
+  color: #6b7280;
+}
+
+.emptyState p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Keyboard shortcuts */
+.commandItem::after {
+  content: "";
+  flex: 1;
+}
+
+.commandItem:focus {
+  outline: none;
+  background: #eff6ff;
+}
+
+/* Scrollbar styling */
+.content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.content::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.content::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.content::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .overlay {
+    padding: 10vh 16px 0;
+  }
+  
+  .commandPalette {
+    max-height: 80vh;
+  }
+  
+  .searchInput {
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+  
+  .commandItem {
+    padding: 10px 12px;
+  }
+  
+  .commandTitle {
+    font-size: 13px;
+  }
+  
+  .commandDescription {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .overlay {
+    padding: 5vh 12px 0;
+  }
+  
+  .header {
+    padding: 12px;
+  }
+  
+  .searchInput {
+    padding: 10px 12px;
+    font-size: 16px;
+  }
+  
+  .commandItem {
+    padding: 8px 12px;
+    gap: 8px;
+  }
+  
+  .commandIcon {
+    width: 18px;
+    height: 18px;
+  }
+}
+

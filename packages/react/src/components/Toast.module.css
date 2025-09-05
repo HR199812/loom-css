@@ -1,0 +1,258 @@
+.toastContainer {
+  position: fixed;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.toast {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  margin-bottom: 12px;
+  max-width: 400px;
+  min-width: 300px;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.3s ease;
+  pointer-events: auto;
+}
+
+.toast.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.toast.exiting {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.toastContent {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+}
+
+.toastIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: bold;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.toastBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.toastTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.toastMessage {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+.toastAction {
+  background: none;
+  border: none;
+  color: #3b82f6;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.toastAction:hover {
+  background: #eff6ff;
+}
+
+.toastClose {
+  background: none;
+  border: none;
+  color: #9ca3af;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.toastClose:hover {
+  color: #6b7280;
+  background: #f3f4f6;
+}
+
+/* Types */
+.success .toastIcon {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.error .toastIcon {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.warning .toastIcon {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.info .toastIcon {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+/* Positions */
+.topRight {
+  top: 20px;
+  right: 20px;
+}
+
+.topLeft {
+  top: 20px;
+  left: 20px;
+}
+
+.bottomRight {
+  bottom: 20px;
+  right: 20px;
+}
+
+.bottomLeft {
+  bottom: 20px;
+  left: 20px;
+}
+
+.topCenter {
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bottomCenter {
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Position-specific animations */
+.topLeft .toast,
+.bottomLeft .toast {
+  transform: translateX(-100%);
+}
+
+.topLeft .toast.visible,
+.bottomLeft .toast.visible {
+  transform: translateX(0);
+}
+
+.topLeft .toast.exiting,
+.bottomLeft .toast.exiting {
+  transform: translateX(-100%);
+}
+
+.topCenter .toast,
+.bottomCenter .toast {
+  transform: translateX(-50%) translateY(-20px);
+}
+
+.topCenter .toast.visible,
+.bottomCenter .toast.visible {
+  transform: translateX(-50%) translateY(0);
+}
+
+.topCenter .toast.exiting,
+.bottomCenter .toast.exiting {
+  transform: translateX(-50%) translateY(-20px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .toast {
+    max-width: calc(100vw - 40px);
+    min-width: 280px;
+  }
+  
+  .topRight,
+  .bottomRight {
+    right: 10px;
+  }
+  
+  .topLeft,
+  .bottomLeft {
+    left: 10px;
+  }
+  
+  .topCenter,
+  .bottomCenter {
+    left: 20px;
+    right: 20px;
+    transform: none;
+  }
+  
+  .topCenter .toast,
+  .bottomCenter .toast {
+    transform: translateY(-20px);
+  }
+  
+  .topCenter .toast.visible,
+  .bottomCenter .toast.visible {
+    transform: translateY(0);
+  }
+  
+  .topCenter .toast.exiting,
+  .bottomCenter .toast.exiting {
+    transform: translateY(-20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .toast {
+    max-width: calc(100vw - 20px);
+    min-width: 260px;
+  }
+  
+  .toastContent {
+    padding: 12px;
+    gap: 10px;
+  }
+  
+  .toastTitle {
+    font-size: 13px;
+  }
+  
+  .toastMessage {
+    font-size: 13px;
+  }
+  
+  .toastAction {
+    font-size: 13px;
+  }
+}
+

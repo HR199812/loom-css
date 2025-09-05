@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { LoomConfigProvider } from "@loom/react";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -24,7 +25,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+        <LoomConfigProvider
+          config={{
+            fontFamily: 'var(--loom-font-family)',
+            theme: 'system',
+          }}
+        >
+          {children}
+        </LoomConfigProvider>
       </body>
     </html>
   );

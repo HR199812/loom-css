@@ -1,0 +1,193 @@
+.toggleGroup {
+  display: flex;
+  background: #f3f4f6;
+  border-radius: 6px;
+  padding: 2px;
+  gap: 2px;
+}
+
+.toggleItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: none;
+  background: transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  color: #6b7280;
+  flex: 1;
+}
+
+.toggleItem:hover:not(.itemDisabled) {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.toggleItem.selected {
+  background: white;
+  color: #111827;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.toggleItem.itemDisabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.toggleIcon {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.toggleLabel {
+  font-size: 14px;
+  line-height: 1;
+}
+
+/* Variants */
+.default {
+  background: #f3f4f6;
+}
+
+.outlined {
+  background: transparent;
+  border: 1px solid #d1d5db;
+  padding: 1px;
+}
+
+.filled {
+  background: #e5e7eb;
+}
+
+.filled .toggleItem.selected {
+  background: #3b82f6;
+  color: white;
+}
+
+/* Sizes */
+.sm .toggleItem {
+  padding: 4px 8px;
+  font-size: 12px;
+  min-height: 28px;
+}
+
+.sm .toggleIcon {
+  font-size: 12px;
+}
+
+.sm .toggleLabel {
+  font-size: 12px;
+}
+
+.md .toggleItem {
+  padding: 6px 12px;
+  font-size: 14px;
+  min-height: 36px;
+}
+
+.md .toggleIcon {
+  font-size: 14px;
+}
+
+.md .toggleLabel {
+  font-size: 14px;
+}
+
+.lg .toggleItem {
+  padding: 8px 16px;
+  font-size: 16px;
+  min-height: 44px;
+}
+
+.lg .toggleIcon {
+  font-size: 16px;
+}
+
+.lg .toggleLabel {
+  font-size: 16px;
+}
+
+/* Orientations */
+.horizontal {
+  flex-direction: row;
+}
+
+.vertical {
+  flex-direction: column;
+}
+
+.vertical .toggleItem {
+  width: 100%;
+  justify-content: flex-start;
+}
+
+/* Focus styles */
+.toggleItem:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.toggleItem:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .lg .toggleItem {
+    padding: 6px 12px;
+    font-size: 14px;
+    min-height: 36px;
+  }
+  
+  .lg .toggleIcon {
+    font-size: 14px;
+  }
+  
+  .lg .toggleLabel {
+    font-size: 14px;
+  }
+  
+  .md .toggleItem {
+    padding: 5px 10px;
+    font-size: 13px;
+    min-height: 32px;
+  }
+  
+  .md .toggleIcon {
+    font-size: 13px;
+  }
+  
+  .md .toggleLabel {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .toggleGroup {
+    gap: 1px;
+    padding: 1px;
+  }
+  
+  .lg .toggleItem {
+    padding: 5px 10px;
+    font-size: 13px;
+    min-height: 32px;
+  }
+  
+  .md .toggleItem {
+    padding: 4px 8px;
+    font-size: 12px;
+    min-height: 28px;
+  }
+  
+  .sm .toggleItem {
+    padding: 3px 6px;
+    font-size: 11px;
+    min-height: 24px;
+  }
+}
+

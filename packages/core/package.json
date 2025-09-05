@@ -5,7 +5,13 @@
   "types": "index.d.ts",
   "files": [
     "index.ts",
-    "tokens.json"
+    "tokens.json",
+    "utilities.css",
+    "utilities-colors.css",
+    "utilities-typography.css",
+    "utilities-layout.css",
+    "loom-utilities.css",
+    "UTILITIES.md"
   ],
   "description": "Loom Design System core tokens and utilities.",
   "license": "MIT",
