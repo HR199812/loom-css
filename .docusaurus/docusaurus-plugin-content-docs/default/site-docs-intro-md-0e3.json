@@ -1,0 +1,22 @@
+{
+  "id": "intro",
+  "title": "Introduction",
+  "description": "Welcome to loom-css, a modern, flexible CSS design system built for React and Vue applications. loom-css provides a comprehensive set of components, utilities, and design tokens that help you build beautiful, consistent user interfaces quickly and efficiently.",
+  "source": "@site/docs/intro.md",
+  "sourceDirName": ".",
+  "slug": "/intro",
+  "permalink": "/docs/intro",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HR199812/loom-css/tree/main/docs/intro.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "next": {
+    "title": "Installation",
+    "permalink": "/docs/installation"
+  }
+}

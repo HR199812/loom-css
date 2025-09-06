@@ -1,0 +1,158 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 16px 0;
+}
+
+.pageButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e5e7eb;
+  background: white;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s;
+  outline: none;
+  font-weight: 500;
+}
+
+.pageButton:hover:not(:disabled) {
+  background-color: #f3f4f6;
+  border-color: #3b82f6;
+}
+
+.pageButton:focus {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.pageButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pageButton.active {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+  color: white;
+}
+
+.pageButton.active:hover {
+  background-color: #2563eb;
+  border-color: #2563eb;
+}
+
+.ellipsis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* Sizes */
+.sm .pageButton {
+  width: 28px;
+  height: 28px;
+  font-size: 12px;
+}
+
+.sm .ellipsis {
+  width: 28px;
+  height: 28px;
+  font-size: 12px;
+}
+
+.md .pageButton {
+  width: 36px;
+  height: 36px;
+  font-size: 14px;
+}
+
+.md .ellipsis {
+  width: 36px;
+  height: 36px;
+  font-size: 14px;
+}
+
+.lg .pageButton {
+  width: 44px;
+  height: 44px;
+  font-size: 16px;
+}
+
+.lg .ellipsis {
+  width: 44px;
+  height: 44px;
+  font-size: 16px;
+}
+
+/* Variants */
+.outlined .pageButton {
+  border-width: 2px;
+}
+
+.minimal .pageButton {
+  border: none;
+  background: transparent;
+}
+
+.minimal .pageButton:hover:not(:disabled) {
+  background-color: #f3f4f6;
+}
+
+.minimal .pageButton.active {
+  background-color: #3b82f6;
+  color: white;
+}
+
+/* States */
+.disabled .pageButton {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pagination {
+    gap: 2px;
+  }
+  
+  .sm .pageButton {
+    width: 24px;
+    height: 24px;
+    font-size: 10px;
+  }
+  
+  .sm .ellipsis {
+    width: 24px;
+    height: 24px;
+    font-size: 10px;
+  }
+  
+  .md .pageButton {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+  
+  .md .ellipsis {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+  
+  .lg .pageButton {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+  
+  .lg .ellipsis {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+}

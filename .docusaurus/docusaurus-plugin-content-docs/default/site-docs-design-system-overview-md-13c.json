@@ -1,0 +1,26 @@
+{
+  "id": "design-system/overview",
+  "title": "Design System Overview",
+  "description": "loom-css is built on a comprehensive design system that provides consistency, scalability, and maintainability across all components and applications. This guide will help you understand the core principles and structure of our design system.",
+  "source": "@site/docs/design-system/overview.md",
+  "sourceDirName": "design-system",
+  "slug": "/design-system/overview",
+  "permalink": "/docs/design-system/overview",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HR199812/loom-css/tree/main/docs/design-system/overview.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Vue Getting Started",
+    "permalink": "/docs/vue/getting-started"
+  },
+  "next": {
+    "title": "Button Component",
+    "permalink": "/docs/components/button"
+  }
+}

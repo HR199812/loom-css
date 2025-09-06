@@ -89,7 +89,7 @@ export const Text: React.FC<TextProps> = ({
     lineHeight: lineHeight || undefined,
   };
 
-  const Tag = as as keyof JSX.IntrinsicElements;
+  const Tag = as as keyof React.JSX.IntrinsicElements;
 
   return (
     <Tag className={textClass} style={textStyle}>

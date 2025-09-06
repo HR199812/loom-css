@@ -1,0 +1,26 @@
+{
+  "id": "components/pagination",
+  "title": "Pagination Component",
+  "description": "A component for navigating through paginated content.",
+  "source": "@site/docs/components/pagination.md",
+  "sourceDirName": "components",
+  "slug": "/components/pagination",
+  "permalink": "/docs/components/pagination",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HR199812/loom-css/tree/main/docs/components/pagination.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "OTP Input Component",
+    "permalink": "/docs/components/otpinput"
+  },
+  "next": {
+    "title": "Payment Plan Component",
+    "permalink": "/docs/components/paymentplan"
+  }
+}

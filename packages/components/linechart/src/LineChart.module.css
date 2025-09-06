@@ -1,0 +1,248 @@
+.chart {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  width: 100%;
+}
+
+/* Variants */
+.default {
+  border-width: 1px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.minimal {
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+.gradient {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border: 1px solid #e2e8f0;
+}
+
+/* Sizes */
+.sm {
+  padding: 12px;
+}
+
+.md {
+  padding: 20px;
+}
+
+.lg {
+  padding: 28px;
+}
+
+/* Chart Title */
+.chartTitle {
+  margin: 0 0 20px 0;
+  color: #111827;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Chart Content */
+.chartContent {
+  width: 100%;
+}
+
+.chartContainer {
+  position: relative;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.chartSvg {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Grid */
+.grid {
+  opacity: 0.5;
+}
+
+/* X-axis Labels */
+.xAxisLabels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  padding: 0 40px;
+}
+
+.xAxisLabel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-width: 0;
+  flex: 1;
+}
+
+.labelText {
+  font-size: 12px;
+  font-weight: 500;
+  color: #374151;
+  text-align: center;
+}
+
+.valueText {
+  font-size: 11px;
+  color: #6b7280;
+  text-align: center;
+}
+
+/* Descriptions */
+.descriptions {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.description {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #f9fafb;
+  border-radius: 6px;
+  border-left: 3px solid #3b82f6;
+}
+
+.descriptionLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: #374151;
+  min-width: 60px;
+}
+
+.descriptionText {
+  font-size: 12px;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+/* Legend */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legendColor {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.legendLabel {
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* Gradient Variant */
+.gradient .chartSvg {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* Minimal Variant */
+.minimal .chartTitle {
+  margin-bottom: 16px;
+}
+
+.minimal .chartSvg {
+  background: transparent;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .chart {
+    padding: 16px;
+  }
+  
+  .sm {
+    padding: 8px;
+  }
+  
+  .md {
+    padding: 16px;
+  }
+  
+  .lg {
+    padding: 20px;
+  }
+  
+  .chartTitle {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+  
+  .chartSvg {
+    max-width: 100%;
+  }
+  
+  .xAxisLabels {
+    padding: 0 20px;
+  }
+  
+  .labelText,
+  .valueText {
+    font-size: 10px;
+  }
+  
+  .description {
+    padding: 6px 10px;
+  }
+  
+  .descriptionLabel,
+  .descriptionText {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .xAxisLabels {
+    padding: 0 10px;
+  }
+  
+  .labelText,
+  .valueText {
+    font-size: 9px;
+  }
+  
+  .descriptions {
+    gap: 6px;
+  }
+  
+  .description {
+    padding: 4px 8px;
+  }
+  
+  .descriptionLabel {
+    min-width: 50px;
+  }
+  
+  .descriptionLabel,
+  .descriptionText {
+    font-size: 10px;
+  }
+}
+

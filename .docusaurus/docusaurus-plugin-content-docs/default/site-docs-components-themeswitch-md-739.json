@@ -1,0 +1,26 @@
+{
+  "id": "components/themeswitch",
+  "title": "Theme Switch Component",
+  "description": "A component for switching between light and dark themes.",
+  "source": "@site/docs/components/themeswitch.md",
+  "sourceDirName": "components",
+  "slug": "/components/themeswitch",
+  "permalink": "/docs/components/themeswitch",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HR199812/loom-css/tree/main/docs/components/themeswitch.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Textarea Component",
+    "permalink": "/docs/components/textarea"
+  },
+  "next": {
+    "title": "Title Component",
+    "permalink": "/docs/components/title"
+  }
+}

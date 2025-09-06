@@ -107,6 +107,9 @@ export const LineChart: React.FC<LineChartProps> = ({
 
     const firstPoint = points[0];
     const lastPoint = points[points.length - 1];
+    
+    if (!firstPoint || !lastPoint) return '';
+    
     const bottomY = height - padding;
 
     return `M ${firstPoint} L ${points.join(' L ')} L ${lastPoint.split(',')[0]},${bottomY} L ${firstPoint.split(',')[0]},${bottomY} Z`;

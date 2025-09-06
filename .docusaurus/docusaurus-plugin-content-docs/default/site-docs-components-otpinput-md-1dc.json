@@ -1,0 +1,26 @@
+{
+  "id": "components/otpinput",
+  "title": "OTP Input Component",
+  "description": "A component for entering one-time passwords or verification codes.",
+  "source": "@site/docs/components/otpinput.md",
+  "sourceDirName": "components",
+  "slug": "/components/otpinput",
+  "permalink": "/docs/components/otpinput",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HR199812/loom-css/tree/main/docs/components/otpinput.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Lists Component",
+    "permalink": "/docs/components/lists"
+  },
+  "next": {
+    "title": "Pagination Component",
+    "permalink": "/docs/components/pagination"
+  }
+}

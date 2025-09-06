@@ -1,0 +1,26 @@
+{
+  "id": "installation",
+  "title": "Installation",
+  "description": "This guide will help you install and set up loom-css in your project. Choose the installation method that best fits your needs.",
+  "source": "@site/docs/installation.md",
+  "sourceDirName": ".",
+  "slug": "/installation",
+  "permalink": "/docs/installation",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HR199812/loom-css/tree/main/docs/installation.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Introduction",
+    "permalink": "/docs/intro"
+  },
+  "next": {
+    "title": "React Getting Started",
+    "permalink": "/docs/react/getting-started"
+  }
+}

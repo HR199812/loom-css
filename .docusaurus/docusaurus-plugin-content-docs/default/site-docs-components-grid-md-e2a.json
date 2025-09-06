@@ -1,0 +1,26 @@
+{
+  "id": "components/grid",
+  "title": "Grid Component",
+  "description": "A flexible grid layout component.",
+  "source": "@site/docs/components/grid.md",
+  "sourceDirName": "components",
+  "slug": "/components/grid",
+  "permalink": "/docs/components/grid",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HR199812/loom-css/tree/main/docs/components/grid.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Dropdown Component",
+    "permalink": "/docs/components/dropdown"
+  },
+  "next": {
+    "title": "Lists Component",
+    "permalink": "/docs/components/lists"
+  }
+}

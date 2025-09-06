@@ -1,0 +1,26 @@
+{
+  "id": "components/dropdown",
+  "title": "Dropdown Component",
+  "description": "A dropdown menu component for displaying options.",
+  "source": "@site/docs/components/dropdown.md",
+  "sourceDirName": "components",
+  "slug": "/components/dropdown",
+  "permalink": "/docs/components/dropdown",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HR199812/loom-css/tree/main/docs/components/dropdown.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Date Input Component",
+    "permalink": "/docs/components/dateinput"
+  },
+  "next": {
+    "title": "Grid Component",
+    "permalink": "/docs/components/grid"
+  }
+}

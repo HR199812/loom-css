@@ -1,0 +1,26 @@
+{
+  "id": "components/badge",
+  "title": "Badge Component",
+  "description": "A small component for displaying status, counts, or labels.",
+  "source": "@site/docs/components/badge.md",
+  "sourceDirName": "components",
+  "slug": "/components/badge",
+  "permalink": "/docs/components/badge",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HR199812/loom-css/tree/main/docs/components/badge.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Avatar Component",
+    "permalink": "/docs/components/avatar"
+  },
+  "next": {
+    "title": "Breadcrumb Component",
+    "permalink": "/docs/components/breadcrumb"
+  }
+}

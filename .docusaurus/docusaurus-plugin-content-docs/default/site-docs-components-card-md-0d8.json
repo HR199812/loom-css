@@ -1,0 +1,26 @@
+{
+  "id": "components/card",
+  "title": "Card Component",
+  "description": "The Card component provides a flexible container for grouping related content and actions.",
+  "source": "@site/docs/components/card.md",
+  "sourceDirName": "components",
+  "slug": "/components/card",
+  "permalink": "/docs/components/card",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HR199812/loom-css/tree/main/docs/components/card.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Input Component",
+    "permalink": "/docs/components/input"
+  },
+  "next": {
+    "title": "Modal Component",
+    "permalink": "/docs/components/modal"
+  }
+}

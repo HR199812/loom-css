@@ -1,0 +1,26 @@
+{
+  "id": "components/dateinput",
+  "title": "Date Input Component",
+  "description": "A specialized input component for date selection.",
+  "source": "@site/docs/components/dateinput.md",
+  "sourceDirName": "components",
+  "slug": "/components/dateinput",
+  "permalink": "/docs/components/dateinput",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HR199812/loom-css/tree/main/docs/components/dateinput.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Command Palette Component",
+    "permalink": "/docs/components/commandpalette"
+  },
+  "next": {
+    "title": "Dropdown Component",
+    "permalink": "/docs/components/dropdown"
+  }
+}

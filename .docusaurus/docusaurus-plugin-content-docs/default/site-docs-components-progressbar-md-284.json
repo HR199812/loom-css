@@ -1,0 +1,26 @@
+{
+  "id": "components/progressbar",
+  "title": "Progress Bar Component",
+  "description": "A component for displaying progress or loading states.",
+  "source": "@site/docs/components/progressbar.md",
+  "sourceDirName": "components",
+  "slug": "/components/progressbar",
+  "permalink": "/docs/components/progressbar",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HR199812/loom-css/tree/main/docs/components/progressbar.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Payment Plan Component",
+    "permalink": "/docs/components/paymentplan"
+  },
+  "next": {
+    "title": "Radio Component",
+    "permalink": "/docs/components/radio"
+  }
+}

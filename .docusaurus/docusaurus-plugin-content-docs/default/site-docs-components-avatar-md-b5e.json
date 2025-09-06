@@ -1,0 +1,26 @@
+{
+  "id": "components/avatar",
+  "title": "Avatar Component",
+  "description": "A component for displaying user profile pictures or initials.",
+  "source": "@site/docs/components/avatar.md",
+  "sourceDirName": "components",
+  "slug": "/components/avatar",
+  "permalink": "/docs/components/avatar",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HR199812/loom-css/tree/main/docs/components/avatar.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Alert Component",
+    "permalink": "/docs/components/alert"
+  },
+  "next": {
+    "title": "Badge Component",
+    "permalink": "/docs/components/badge"
+  }
+}

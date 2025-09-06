@@ -1,0 +1,26 @@
+{
+  "id": "components/textarea",
+  "title": "Textarea Component",
+  "description": "A multi-line text input component.",
+  "source": "@site/docs/components/textarea.md",
+  "sourceDirName": "components",
+  "slug": "/components/textarea",
+  "permalink": "/docs/components/textarea",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HR199812/loom-css/tree/main/docs/components/textarea.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Text Component",
+    "permalink": "/docs/components/text"
+  },
+  "next": {
+    "title": "Theme Switch Component",
+    "permalink": "/docs/components/themeswitch"
+  }
+}

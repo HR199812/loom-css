@@ -1,0 +1,183 @@
+.otpInput {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.input {
+  width: 48px;
+  height: 48px;
+  text-align: center;
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  background: white;
+  color: #111827;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.input.filled {
+  border-color: #10b981;
+  background: #f0fdf4;
+}
+
+.input:disabled {
+  background: #f3f4f6;
+  border-color: #e5e7eb;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Variants */
+.default .input {
+  border: 2px solid #d1d5db;
+  background: white;
+}
+
+.outlined .input {
+  border: 2px solid #d1d5db;
+  background: transparent;
+}
+
+.outlined .input:focus {
+  border-color: #3b82f6;
+  background: white;
+}
+
+.filled .input {
+  border: 2px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+.filled .input:focus {
+  border-color: #3b82f6;
+  background: white;
+}
+
+/* Sizes */
+.sm .input {
+  width: 36px;
+  height: 36px;
+  font-size: 14px;
+  border-radius: 6px;
+}
+
+.sm.otpInput {
+  gap: 6px;
+}
+
+.md .input {
+  width: 48px;
+  height: 48px;
+  font-size: 18px;
+  border-radius: 8px;
+}
+
+.md.otpInput {
+  gap: 8px;
+}
+
+.lg .input {
+  width: 56px;
+  height: 56px;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+.lg.otpInput {
+  gap: 10px;
+}
+
+/* Disabled state */
+.disabled .input {
+  background: #f3f4f6;
+  border-color: #e5e7eb;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.disabled .input:focus {
+  border-color: #e5e7eb;
+  box-shadow: none;
+}
+
+/* Animation for filled state */
+.input.filled {
+  animation: fillAnimation 0.3s ease;
+}
+
+@keyframes fillAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .lg .input {
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+  }
+  
+  .lg.otpInput {
+    gap: 8px;
+  }
+  
+  .md .input {
+    width: 44px;
+    height: 44px;
+    font-size: 16px;
+  }
+  
+  .md.otpInput {
+    gap: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .lg .input {
+    width: 44px;
+    height: 44px;
+    font-size: 16px;
+  }
+  
+  .lg.otpInput {
+    gap: 6px;
+  }
+  
+  .md .input {
+    width: 40px;
+    height: 40px;
+    font-size: 15px;
+  }
+  
+  .md.otpInput {
+    gap: 4px;
+  }
+  
+  .sm .input {
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+  }
+  
+  .sm.otpInput {
+    gap: 4px;
+  }
+}
+

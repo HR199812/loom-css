@@ -1,0 +1,86 @@
+{
+  "name": "@loom/vue",
+  "version": "0.0.1",
+  "description": "Loom Design System - Complete Vue.js Components Library (Meta Package)",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch"
+  },
+  "dependencies": {
+    "@loom-vue/button": "*",
+    "@loom-vue/input": "*",
+    "@loom-vue/card": "*",
+    "@loom-vue/text": "*",
+    "@loom-vue/title": "*",
+    "@loom-vue/alert": "*",
+    "@loom-vue/modal": "*",
+    "@loom-vue/switch": "*",
+    "@loom-vue/checkbox": "*",
+    "@loom-vue/radio": "*",
+    "@loom-vue/slider": "*",
+    "@loom-vue/select": "*",
+    "@loom-vue/image": "*",
+    "@loom-vue/avatar": "*",
+    "@loom-vue/badge": "*",
+    "@loom-vue/list": "*",
+    "@loom-vue/listitem": "*",
+    "@loom-vue/separator": "*",
+    "@loom-vue/progressbar": "*",
+    "@loom-vue/spinner": "*",
+    "@loom-vue/toast": "*",
+    "@loom-vue/navigation": "*",
+    "@loom-vue/tabbar": "*",
+    "@loom-vue/header": "*",
+    "@loom-vue/footer": "*",
+    "@loom-vue/grid": "*",
+    "@loom-vue/flex": "*",
+    "@loom-vue/container": "*",
+    "@loom-vue/form": "*",
+    "@loom-vue/field": "*",
+    "@loom-vue/table": "*",
+    "@loom-vue/pagination": "*",
+    "@loom-vue/breadcrumb": "*",
+    "@loom-vue/accordion": "*",
+    "@loom-vue/tabs": "*",
+    "@loom-vue/tooltip": "*",
+    "@loom-vue/dropdown": "*",
+    "@loom-vue/datepicker": "*",
+    "@loom-vue/timepicker": "*",
+    "@loom-vue/calendar": "*",
+    "@loom/core": "*"
+  },
+  "peerDependencies": {
+    "vue": ">=3.0.0"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0",
+    "@repo/typescript-config": "*"
+  },
+  "keywords": [
+    "vue",
+    "vue3",
+    "components",
+    "ui",
+    "design-system",
+    "loom",
+    "meta-package"
+  ],
+  "author": "Loom Contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/loom-design/loom",
+    "directory": "packages/vue"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

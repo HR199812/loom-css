@@ -1,1571 +1,485 @@
 "use client";
 import {
-  Alert,
   Button,
-  Calendar,
-  Input,
-  Title,
-  Range,
-  Lists,
-  ListItem,
-  Table,
-  Accordion,
-  Dropdown,
-  Modal,
-  Pagination,
-  Radio,
-  SearchInput,
   Card,
-  Grid,
   Text,
-  DateInput,
-  PaymentPlan,
-  Chat,
+  Title,
+  Badge,
+  Avatar,
+  Grid,
+  Separator,
+  Input,
+  Switch,
+  ProgressBar,
   BarChart,
   LineChart,
-  Avatar,
-  Badge,
-  Carousel,
-  Breadcrumb,
-  Checkbox,
-  CommandPalette,
-  Tooltip,
-  OTPInput,
-  ProgressBar,
-  Separator,
-  ToggleGroup,
-  TextArea,
-  Sidebar,
-  Switch,
-  ThemeSwitch,
+  Modal,
 } from "@loom/react";
 import { useState } from "react";
 
 export default function Home() {
-  const [currentPage, setCurrentPage] = useState(1);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isSearching, setIsSearching] = useState(false);
-  const [selectedDate, setSelectedDate] = useState(new Date());
-  const [selectedRadio, setSelectedRadio] = useState("a");
-  const [selectedDropdown, setSelectedDropdown] = useState("");
-  const [searchValue, setSearchValue] = useState("");
-  const [isCommandPaletteOpen, setIsCommandPaletteOpen] = useState(false);
-  const [checkboxStates, setCheckboxStates] = useState({
-    basic: false,
-    withDescription: false,
-    indeterminate: false,
-  });
-  const [otpValue, setOtpValue] = useState("");
-  const [toggleGroupValue, setToggleGroupValue] = useState<string[]>(["bold"]);
-  const [textAreaValue, setTextAreaValue] = useState("");
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const [switchStates, setSwitchStates] = useState({
-    notifications: true,
-    darkMode: false,
-    autoSave: true,
-    publicProfile: false,
-  });
-  const [theme, setTheme] = useState<"light" | "dark" | "system">("light");
-  const [chatMessages, setChatMessages] = useState([
-    {
-      id: "1",
-      text: "Hello! How can I help you today?",
-      sender: "bot" as const,
-      timestamp: new Date(),
-    },
-    {
-      id: "2",
-      text: "I need help with the payment plan upgrade",
-      sender: "user" as const,
-      timestamp: new Date(),
-    },
-  ]);
+  const [email, setEmail] = useState("");
+  const [isSubscribed, setIsSubscribed] = useState(false);
 
-  const totalPages = 20;
-
-  // Sample data for components
-  const tableData = [
-    { name: "John Doe", age: 25, email: "john@example.com" },
-    { name: "Jane Smith", age: 30, email: "jane@example.com" },
-    { name: "Bob Johnson", age: 35, email: "bob@example.com" },
+  // Sample data for charts
+  const performanceData = [
+    { label: "Q1 2024", value: 85, description: "Strong start", color: "#3b82f6" },
+    { label: "Q2 2024", value: 92, description: "Continued growth", color: "#10b981" },
+    { label: "Q3 2024", value: 78, description: "Seasonal adjustment", color: "#f59e0b" },
+    { label: "Q4 2024", value: 95, description: "Year-end surge", color: "#ef4444" },
   ];
 
-  const tableColumns = [
-    { key: "name", title: "Name", sortable: true },
-    { key: "age", title: "Age", align: "center" as const },
-    { key: "email", title: "Email" },
+  const growthData = [
+    { label: "Jan", value: 65, description: "January", color: "#3b82f6" },
+    { label: "Feb", value: 72, description: "February", color: "#3b82f6" },
+    { label: "Mar", value: 68, description: "March", color: "#3b82f6" },
+    { label: "Apr", value: 85, description: "April", color: "#3b82f6" },
+    { label: "May", value: 92, description: "May", color: "#3b82f6" },
+    { label: "Jun", value: 88, description: "June", color: "#3b82f6" },
   ];
 
-  const dropdownOptions = [
-    { value: "option1", label: "Option 1", icon: "🚀" },
-    { value: "option2", label: "Option 2", icon: "⭐" },
-    { value: "option3", label: "Option 3", icon: "🎯" },
+  const components = [
+    { name: "Button", description: "Interactive buttons with multiple variants", icon: "🔘" },
+    { name: "Input", description: "Form inputs with validation and styling", icon: "📝" },
+    { name: "Card", description: "Container components with shadows", icon: "🃏" },
+    { name: "Modal", description: "Overlay dialogs and popups", icon: "🪟" },
+    { name: "Table", description: "Data tables with sorting and pagination", icon: "📊" },
+    { name: "Chart", description: "Beautiful charts and data visualization", icon: "📈" },
+    { name: "Avatar", description: "User profile images and initials", icon: "👤" },
+    { name: "Badge", description: "Status indicators and notifications", icon: "🏷️" },
+    { name: "Alert", description: "Feedback messages and notifications", icon: "⚠️" },
+    { name: "Switch", description: "Toggle switches for settings", icon: "🔄" },
+    { name: "Progress", description: "Progress bars and loading indicators", icon: "📊" },
+    { name: "Tooltip", description: "Contextual help and information", icon: "💡" },
   ];
 
-  const searchOptions = [
-    { value: "search1", label: "Search Result 1" },
-    { value: "search2", label: "Search Result 2" },
-    { value: "search3", label: "Search Result 3" },
-  ];
-
-  const radioOptions = [
-    { value: "a", label: "Option A" },
-    { value: "b", label: "Option B" },
-    { value: "c", label: "Option C" },
-  ];
-
-  const accordionItems = [
+  const features = [
     {
-      id: "1",
-      title: "Getting Started",
-      content: (
-        <div>
-          <Text variant="body">
-            Learn how to get started with Loom Design System.
-          </Text>
-          <Button variant="primary" size="sm" style={{ marginTop: "8px" }}>
-            Read More
-          </Button>
-        </div>
-      ),
+      title: "Individual Packages",
+      description: "Install only the components you need. Each component is a separate npm package for optimal bundle size.",
+      icon: "📦",
     },
     {
-      id: "2",
-      title: "Components",
-      content: (
-        <div>
-          <Text variant="body">
-            Explore our comprehensive component library.
-          </Text>
-          <Lists type="ul" style="disc" spacing="normal">
-            <ListItem>Buttons</ListItem>
-            <ListItem>Inputs</ListItem>
-            <ListItem>Cards</ListItem>
-            <ListItem>Modals</ListItem>
-          </Lists>
-        </div>
-      ),
+      title: "TypeScript Ready",
+      description: "Built with TypeScript from the ground up. Full type safety and excellent developer experience.",
+      icon: "🔷",
     },
     {
-      id: "3",
-      title: "Customization",
-      content: (
-        <div>
-          <Text variant="body">Customize components to match your brand.</Text>
-          <Range
-            title="Opacity"
-            min={0}
-            max={100}
-            onChange={(val) => console.log("Opacity:", val)}
-          />
-        </div>
-      ),
-    },
-  ];
-
-  // Sample data for new components
-  const paymentPlans = [
-    {
-      title: "Basic Plan",
-      price: 9,
-      period: "/month",
-      description: "Perfect for getting started",
-      features: [
-        { name: "Up to 5 projects", included: true },
-        { name: "Basic support", included: true },
-        { name: "Standard templates", included: true },
-        { name: "Advanced analytics", included: false },
-        { name: "Priority support", included: false },
-      ],
-      popular: false,
+      title: "Accessible by Default",
+      description: "All components follow WCAG guidelines and include proper ARIA attributes for screen readers.",
+      icon: "♿",
     },
     {
-      title: "Pro Plan",
-      price: 29,
-      period: "/month",
-      description: "Most popular choice",
-      features: [
-        { name: "Unlimited projects", included: true },
-        { name: "Priority support", included: true },
-        { name: "Premium templates", included: true },
-        { name: "Advanced analytics", included: true },
-        { name: "Custom integrations", included: true },
-      ],
-      popular: true,
+      title: "Customizable",
+      description: "Easily customize colors, spacing, and styling to match your brand and design system.",
+      icon: "🎨",
     },
     {
-      title: "Enterprise",
-      price: 99,
-      period: "/month",
-      description: "For large teams",
-      features: [
-        { name: "Everything in Pro", included: true },
-        { name: "Dedicated support", included: true },
-        { name: "Custom branding", included: true },
-        { name: "API access", included: true },
-        { name: "SLA guarantee", included: true },
-      ],
-      popular: false,
-    },
-  ];
-
-  const chartData = [
-    {
-      label: "Q1 2024",
-      value: 85,
-      description: "Strong start to the year",
-      color: "#3b82f6",
+      title: "Framework Agnostic",
+      description: "Available for React, Vue.js, and more. Use the same design system across all your projects.",
+      icon: "⚛️",
     },
     {
-      label: "Q2 2024",
-      value: 92,
-      description: "Continued growth",
-      color: "#10b981",
-    },
-    {
-      label: "Q3 2024",
-      value: 78,
-      description: "Seasonal adjustment",
-      color: "#f59e0b",
-    },
-    {
-      label: "Q4 2024",
-      value: 95,
-      description: "Year-end surge",
-      color: "#ef4444",
-    },
-  ];
-
-  const lineChartData = [
-    {
-      label: "Jan",
-      value: 65,
-      description: "January performance",
-      color: "#3b82f6",
-    },
-    {
-      label: "Feb",
-      value: 72,
-      description: "February growth",
-      color: "#3b82f6",
-    },
-    {
-      label: "Mar",
-      value: 68,
-      description: "March adjustment",
-      color: "#3b82f6",
-    },
-    {
-      label: "Apr",
-      value: 85,
-      description: "April surge",
-      color: "#3b82f6",
-    },
-    {
-      label: "May",
-      value: 92,
-      description: "May peak",
-      color: "#3b82f6",
-    },
-    {
-      label: "Jun",
-      value: 88,
-      description: "June stability",
-      color: "#3b82f6",
-    },
-  ];
-
-  // Sample data for new components
-  const breadcrumbItems = [
-    { label: "Home", href: "/" },
-    { label: "Components", href: "/components" },
-    { label: "UI Elements", href: "/components/ui" },
-    { label: "Current Page" },
-  ];
-
-  const carouselItems = [
-    {
-      id: "1",
-      content: (
-        <div style={{ padding: "20px", textAlign: "center" }}>
-          <Title level="h3">Welcome to Loom Design System</Title>
-          <Text variant="body">
-            A comprehensive component library for modern React applications.
-          </Text>
-        </div>
-      ),
-      title: "Welcome",
-      description: "Get started with our design system",
-    },
-    {
-      id: "2",
-      content: (
-        <div style={{ padding: "20px", textAlign: "center" }}>
-          <Title level="h3">Beautiful Components</Title>
-          <Text variant="body">
-            Pre-built, accessible, and customizable components.
-          </Text>
-        </div>
-      ),
-      title: "Components",
-      description: "Explore our component library",
-    },
-    {
-      id: "3",
-      content: (
-        <div style={{ padding: "20px", textAlign: "center" }}>
-          <Title level="h3">Easy Integration</Title>
-          <Text variant="body">
-            Simple to integrate into your existing projects.
-          </Text>
-        </div>
-      ),
-      title: "Integration",
-      description: "Start building today",
-    },
-  ];
-
-  const commandItems = [
-    {
-      id: "1",
-      title: "Create New Project",
-      description: "Start a new project with Loom Design System",
+      title: "Production Ready",
+      description: "Battle-tested components used in production applications. Reliable and performant.",
       icon: "🚀",
-      action: () => console.log("Creating new project"),
-      group: "Actions",
-    },
-    {
-      id: "2",
-      title: "Open Settings",
-      description: "Configure your preferences",
-      icon: "⚙️",
-      action: () => console.log("Opening settings"),
-      group: "Actions",
-    },
-    {
-      id: "3",
-      title: "View Documentation",
-      description: "Browse component documentation",
-      icon: "📚",
-      action: () => console.log("Opening docs"),
-      group: "Help",
-    },
-    {
-      id: "4",
-      title: "Contact Support",
-      description: "Get help from our support team",
-      icon: "💬",
-      action: () => console.log("Contacting support"),
-      group: "Help",
     },
   ];
-
-  // Sample data for new components
-  const toggleGroupItems = [
-    { value: "bold", label: "Bold", icon: "B" },
-    { value: "italic", label: "Italic", icon: "I" },
-    { value: "underline", label: "Underline", icon: "U" },
-  ];
-
-  const sidebarItems = [
-    {
-      id: "dashboard",
-      label: "Dashboard",
-      icon: "🏠",
-      href: "/dashboard",
-    },
-    {
-      id: "components",
-      label: "Components",
-      icon: "🧩",
-      children: [
-        {
-          id: "buttons",
-          label: "Buttons",
-          icon: "🔘",
-          href: "/components/buttons",
-        },
-        { id: "forms", label: "Forms", icon: "📝", href: "/components/forms" },
-        {
-          id: "navigation",
-          label: "Navigation",
-          icon: "🧭",
-          href: "/components/navigation",
-        },
-      ],
-    },
-    {
-      id: "pages",
-      label: "Pages",
-      icon: "📄",
-      children: [
-        { id: "home", label: "Home", icon: "🏡", href: "/pages/home" },
-        { id: "about", label: "About", icon: "ℹ️", href: "/pages/about" },
-        { id: "contact", label: "Contact", icon: "📞", href: "/pages/contact" },
-      ],
-    },
-    {
-      id: "settings",
-      label: "Settings",
-      icon: "⚙️",
-      href: "/settings",
-      badge: "3",
-    },
-    {
-      id: "help",
-      label: "Help & Support",
-      icon: "❓",
-      href: "/help",
-    },
-  ];
-
-  const handleSendMessage = (message: string) => {
-    const newMessage = {
-      id: Date.now().toString(),
-      text: message,
-      sender: "user" as const,
-      timestamp: new Date(),
-    };
-    setChatMessages((prev) => [...prev, newMessage]);
-
-    // Simulate bot response
-    setTimeout(() => {
-      const botResponse = {
-        id: (Date.now() + 1).toString(),
-        text: "Thanks for your message! I'll get back to you soon.",
-        sender: "bot" as const,
-        timestamp: new Date(),
-      };
-      setChatMessages((prev) => [...prev, botResponse]);
-    }, 1000);
-  };
 
   return (
-    <main className="p-10">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">
-            Card Title
-          </h3>
-          <p className="text-sm text-gray-600">Card content</p>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+      {/* Navigation */}
+      <nav className="bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <div className="flex items-center space-x-2">
+              <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-sm">L</span>
+              </div>
+              <span className="text-xl font-bold text-gray-900">Loom</span>
+            </div>
+            <div className="hidden md:flex items-center space-x-8">
+              <a href="#components" className="text-gray-600 hover:text-gray-900 transition-colors">Components</a>
+              <a href="#features" className="text-gray-600 hover:text-gray-900 transition-colors">Features</a>
+              <a href="#docs" className="text-gray-600 hover:text-gray-900 transition-colors">Documentation</a>
+              <Button variant="primary" size="sm">Get Started</Button>
+            </div>
+          </div>
         </div>
-      </div>
-      {/* Header Section */}
-      <div style={{ textAlign: "center", marginBottom: "40px" }}>
-        <Title level="h1" align="center" color="#333">
-          Loom Design System
-        </Title>
-        <Text variant="lead" align="center" style={{ marginTop: "16px" }}>
-          A modern, comprehensive component library for React applications
-        </Text>
-      </div>
+      </nav>
 
-      {/* Grid Layout for Components */}
-      <Grid columns={2} gap="lg" style={{ marginBottom: "40px" }}>
-        {/* Card Component */}
-        <Card title="Card Component" variant="elevated" hoverable>
-          <Text variant="body">
-            Beautiful cards with multiple variants and hover effects.
-          </Text>
-          <Button variant="primary" size="sm" style={{ marginTop: "12px" }}>
-            Learn More
-          </Button>
-        </Card>
-
-        {/* Button Variants */}
-        <Card title="Button Variants" variant="outlined">
-          <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
-            <Button variant="primary" size="sm">
-              Primary
-            </Button>
-            <Button variant="secondary" size="sm">
-              Secondary
-            </Button>
-            <Button variant="outline" size="sm">
-              Outline
-            </Button>
-            <Button variant="danger" size="sm">
-              Danger
-            </Button>
-          </div>
-        </Card>
-      </Grid>
-
-      {/* Form Components Section */}
-      <Card
-        title="Form Components"
-        variant="elevated"
-        style={{ marginBottom: "40px" }}
-      >
-        <Grid columns={2} gap="md">
-          {/* Input Component */}
-          <div>
-            <Input
-              title="Email Address"
-              placeholder="Enter your email"
-              regex={/^[^@\s]+@[^@\s]+\.[^@\s]+$/}
-              type="info"
-              errorText="Please enter a valid email."
-              onChange={(val, isValid) => console.log(val, isValid)}
-            />
-          </div>
-
-          {/* DateInput Component */}
-
-          <div>
-            <DateInput
-              title="Select Date"
-              includeTime={false}
-              onChange={(date) => setSelectedDate(date || new Date())}
-            />
-          </div>
-
-          {/* Range Component */}
-          <div>
-            <Range
-              title="Volume Control"
-              description="Adjust the volume level"
-              min={0}
-              max={100}
-              onChange={(val) => console.log("Volume:", val)}
-            />
-          </div>
-
-          {/* Radio Component */}
-          <div>
-            <Radio
-              name="choice"
-              options={radioOptions}
-              direction="vertical"
-              variant="default"
-              value={selectedRadio}
-              onChange={setSelectedRadio}
-            />
-          </div>
-        </Grid>
-      </Card>
-
-      {/* Data Display Section */}
-      <Card
-        title="Data Display"
-        variant="elevated"
-        style={{ marginBottom: "40px" }}
-      >
-        {/* Table with Pagination */}
-        <Table columns={tableColumns} data={tableData} striped hoverable />
-        <Pagination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          onPageChange={setCurrentPage}
-          showFirstLast
-          maxVisiblePages={5}
-          size="md"
-        />
-      </Card>
-
-      {/* Interactive Components */}
-      <Grid columns={2} gap="lg" style={{ marginBottom: "40px" }}>
-        {/* Calendar */}
-        <Card title="Calendar" variant="outlined">
-          <Calendar
-            selectedDate={selectedDate}
-            onDateSelect={setSelectedDate}
-            titleSize={18}
-            titleWeight={600}
-          />
-        </Card>
-
-        {/* Dropdown and Search */}
-        <Card title="Selection Components" variant="outlined">
-          <div style={{ marginBottom: "16px" }}>
-            <Text variant="small" weight="medium">
-              Dropdown:
-            </Text>
-            <Dropdown
-              options={dropdownOptions}
-              onChange={(value, option) => {
-                setSelectedDropdown(value);
-                console.log("Selected:", value, option);
-              }}
-              variant="filled"
-              placeholder="Choose an option"
-            />
-          </div>
-
-          <div>
-            <Text variant="small" weight="medium">
-              Search Input:
-            </Text>
-            <SearchInput
-              options={searchOptions}
-              onSelect={(option) => {
-                setSearchValue(option.value);
-                console.log("Selected:", option);
-              }}
-              loading={isSearching}
-              placeholder="Search for something..."
-            />
-          </div>
-        </Card>
-      </Grid>
-
-      {/* Feedback Components */}
-      <Grid columns={2} gap="lg" style={{ marginBottom: "40px" }}>
-        {/* Alerts */}
-        <Card title="Alert Messages" variant="outlined">
-          <div
-            style={{ display: "flex", flexDirection: "column", gap: "12px" }}
-          >
-            <Alert
-              title="Success!"
-              message="Your changes have been saved successfully."
-              type="success"
-              closable
-              onClose={() => console.log("Success alert closed")}
-            />
-            <Alert
-              title="Warning"
-              message="Please review your input before proceeding."
-              type="warning"
-              closable
-            />
-            <Alert
-              title="Error"
-              message="Something went wrong. Please try again."
-              type="danger"
-              closable
-            />
-          </div>
-        </Card>
-
-        {/* Modal Trigger */}
-        <Card title="Modal Component" variant="outlined">
-          <Text variant="body" style={{ marginBottom: "16px" }}>
-            Click the button below to open a modal dialog.
-          </Text>
-          <Button
-            variant="primary"
-            onClick={() => setIsModalOpen(true)}
-            fullWidth
-          >
-            Open Modal
-          </Button>
-        </Card>
-      </Grid>
-
-      {/* Accordion Component */}
-      <Card
-        title="Accordion Component"
-        variant="elevated"
-        style={{ marginBottom: "40px" }}
-      >
-        <Accordion items={accordionItems} allowMultiple variant="bordered" />
-      </Card>
-
-      {/* Lists Component */}
-      <Card
-        title="Lists Component"
-        variant="outlined"
-        style={{ marginBottom: "40px" }}
-      >
-        <Grid columns={2} gap="md">
-          <div>
-            <Text variant="small" weight="medium">
-              Unordered List:
-            </Text>
-            <Lists type="ul" style="disc" spacing="normal">
-              <ListItem>First item</ListItem>
-              <ListItem>Second item</ListItem>
-              <ListItem>Third item</ListItem>
-            </Lists>
-          </div>
-          <div>
-            <Text variant="small" weight="medium">
-              Ordered List:
-            </Text>
-            <Lists type="ol" style="decimal" spacing="normal">
-              <ListItem>Step one</ListItem>
-              <ListItem>Step two</ListItem>
-              <ListItem>Step three</ListItem>
-            </Lists>
-          </div>
-        </Grid>
-      </Card>
-
-      {/* Typography Showcase */}
-      <Card
-        title="Typography"
-        variant="elevated"
-        style={{ marginBottom: "40px" }}
-      >
-        <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-          <Title level="h1">Heading 1</Title>
-          <Title level="h2">Heading 2</Title>
-          <Title level="h3">Heading 3</Title>
-          <Text variant="lead">Lead paragraph text for important content</Text>
-          <Text variant="body">Regular body text for general content</Text>
-          <Text variant="small">
-            Small text for captions and secondary information
-          </Text>
-          <Text variant="caption">Caption text for labels and metadata</Text>
-        </div>
-      </Card>
-
-      {/* Chat Component */}
-      <Grid columns={2} gap="lg" style={{ marginBottom: "40px" }}>
-        <Card title="Chat Interface" variant="outlined">
-          <Chat
-            messages={chatMessages}
-            onSendMessage={handleSendMessage}
-            placeholder="Type your message..."
-            showAvatars={true}
-            showTimestamps={true}
-            variant="default"
-            botName="Support Bot"
-            userName="You"
-            botAvatar="🤖"
-            userAvatar="👤"
-          />
-        </Card>
-
-        {/* Bar Chart Component */}
-        <Card title="Performance Analytics" variant="outlined">
-          <BarChart
-            title="Quarterly Performance"
-            data={chartData}
-            showValues={true}
-            showDescriptions={true}
-            orientation="vertical"
-            variant="default"
-            size="md"
-          />
-        </Card>
-      </Grid>
-
-      {/* Chart Variants */}
-      <Card
-        title="Chart Variants"
-        variant="elevated"
-        style={{ marginBottom: "40px" }}
-      >
-        <Grid columns={2} gap="lg">
-          <div>
-            <Text
-              variant="small"
-              weight="medium"
-              style={{ marginBottom: "12px" }}
-            >
-              Horizontal Bar Chart:
-            </Text>
-            <BarChart
-              title="Monthly Sales"
-              data={chartData}
-              showValues={true}
-              showDescriptions={false}
-              orientation="horizontal"
-              variant="minimal"
-              size="sm"
-            />
-          </div>
-          <div>
-            <Text
-              variant="small"
-              weight="medium"
-              style={{ marginBottom: "12px" }}
-            >
-              Gradient Bar Chart:
-            </Text>
-            <BarChart
-              title="User Growth"
-              data={chartData}
-              showValues={true}
-              showDescriptions={true}
-              orientation="vertical"
-              variant="gradient"
-              size="sm"
-            />
-          </div>
-        </Grid>
-      </Card>
-
-      {/* Line Chart Section */}
-      <Card
-        title="Line Chart Analytics"
-        variant="elevated"
-        style={{ marginBottom: "40px" }}
-      >
-        <Grid columns={2} gap="lg">
-          <div>
-            <Text
-              variant="small"
-              weight="medium"
-              style={{ marginBottom: "12px" }}
-            >
-              Monthly Trend Line:
-            </Text>
-            <LineChart
-              title="Monthly Performance Trend"
-              data={lineChartData}
-              showValues={true}
-              showDescriptions={true}
-              variant="default"
-              size="md"
-              showGrid={true}
-              showDots={true}
-            />
-          </div>
-          <div>
-            <Text
-              variant="small"
-              weight="medium"
-              style={{ marginBottom: "12px" }}
-            >
-              Minimal Line Chart:
-            </Text>
-            <LineChart
-              title="Growth Trajectory"
-              data={lineChartData}
-              showValues={false}
-              showDescriptions={false}
-              variant="minimal"
-              size="sm"
-              showGrid={false}
-              showDots={true}
-              customColor="#10b981"
-            />
-          </div>
-        </Grid>
-      </Card>
-
-      {/* Payment Plans Section */}
-      <Card
-        title="Payment Plans"
-        variant="elevated"
-        style={{ marginBottom: "40px" }}
-      >
-        <Grid columns={3} gap="lg">
-          {paymentPlans.map((plan, index) => (
-            <PaymentPlan
-              key={index}
-              title={plan.title}
-              description={plan.description}
-              price={plan.price}
-              features={plan.features}
-              popular={plan.popular}
-              onUpgrade={() => console.log(`Upgrading to ${plan.title}`)}
-              variant="elevated"
-            />
-          ))}
-        </Grid>
-      </Card>
-
-      {/* New Components Section */}
-      <Card
-        title="Avatar & Badge Components"
-        variant="elevated"
-        style={{ marginBottom: "40px" }}
-      >
-        <Grid columns={2} gap="lg">
-          <div>
-            <Text
-              variant="small"
-              weight="medium"
-              style={{ marginBottom: "12px" }}
-            >
-              Avatar Variants:
-            </Text>
-            <div
-              style={{
-                display: "flex",
-                gap: "12px",
-                alignItems: "center",
-                flexWrap: "wrap",
-              }}
-            >
-              <Avatar name="John Doe" size="sm" />
-              <Avatar name="Jane Smith" size="md" status="online" />
-              <Avatar name="Bob Johnson" size="lg" status="away" />
-              <Avatar name="Alice Brown" size="xl" status="busy" />
-              <Avatar icon="👤" size="md" />
-              <Avatar
-                src="https://via.placeholder.com/40"
-                alt="User"
-                size="md"
-              />
-            </div>
-          </div>
-          <div>
-            <Text
-              variant="small"
-              weight="medium"
-              style={{ marginBottom: "12px" }}
-            >
-              Badge Variants:
-            </Text>
-            <div
-              style={{
-                display: "flex",
-                gap: "8px",
-                alignItems: "center",
-                flexWrap: "wrap",
-              }}
-            >
-              <Badge variant="default">Default</Badge>
-              <Badge variant="primary">Primary</Badge>
-              <Badge variant="success">Success</Badge>
-              <Badge variant="warning">Warning</Badge>
-              <Badge variant="danger">Danger</Badge>
-              <Badge variant="info">Info</Badge>
-              <Badge variant="primary" dot>
-                {""}
-              </Badge>
-              <Badge variant="danger" max={99}>
-                150
-              </Badge>
-            </div>
-          </div>
-        </Grid>
-      </Card>
-
-      {/* Carousel Section */}
-      <Card
-        title="Carousel Component"
-        variant="elevated"
-        style={{ marginBottom: "40px" }}
-      >
-        <Carousel
-          items={carouselItems}
-          autoPlay={true}
-          autoPlayInterval={4000}
-          showArrows={true}
-          showDots={true}
-          variant="card"
-          size="md"
-        />
-      </Card>
-
-      {/* Breadcrumb & Checkbox Section */}
-      <Grid columns={2} gap="lg" style={{ marginBottom: "40px" }}>
-        <Card title="Breadcrumb Navigation" variant="outlined">
-          <Breadcrumb
-            items={breadcrumbItems}
-            variant="default"
-            size="md"
-            onItemClick={(item, index) =>
-              console.log("Clicked:", item.label, index)
-            }
-          />
-        </Card>
-
-        <Card title="Checkbox Components" variant="outlined">
-          <div
-            style={{ display: "flex", flexDirection: "column", gap: "12px" }}
-          >
-            <Checkbox
-              label="Basic checkbox"
-              checked={checkboxStates.basic}
-              onChange={(checked) =>
-                setCheckboxStates((prev) => ({ ...prev, basic: checked }))
-              }
-            />
-            <Checkbox
-              label="With description"
-              description="This checkbox has additional description text"
-              checked={checkboxStates.withDescription}
-              onChange={(checked) =>
-                setCheckboxStates((prev) => ({
-                  ...prev,
-                  withDescription: checked,
-                }))
-              }
-            />
-            <Checkbox
-              label="Indeterminate state"
-              indeterminate={true}
-              variant="primary"
-            />
-            <Checkbox
-              label="Disabled checkbox"
-              disabled={true}
-              checked={true}
-            />
-          </div>
-        </Card>
-      </Grid>
-
-      {/* OTP Input & Progress Bar Section */}
-      <Grid columns={2} gap="lg" style={{ marginBottom: "40px" }}>
-        <Card title="OTP Input" variant="outlined">
-          <div
-            style={{ display: "flex", flexDirection: "column", gap: "16px" }}
-          >
-            <Text variant="small" weight="medium">
-              6-digit verification code:
-            </Text>
-            <OTPInput
-              length={6}
-              value={otpValue}
-              onChange={setOtpValue}
-              onComplete={(value) => console.log("OTP completed:", value)}
-              variant="outlined"
-              size="md"
-              type="number"
-            />
-            <Text variant="small" color="#6b7280">
-              Enter the 6-digit code sent to your device
-            </Text>
-          </div>
-        </Card>
-
-        <Card title="Progress Bars" variant="outlined">
-          <div
-            style={{ display: "flex", flexDirection: "column", gap: "16px" }}
-          >
-            <ProgressBar
-              value={75}
-              max={100}
-              label="Project Progress"
-              showPercentage={true}
-              variant="primary"
-              size="md"
-            />
-            <ProgressBar
-              value={45}
-              max={100}
-              label="Upload Status"
-              showPercentage={true}
-              variant="success"
-              size="sm"
-              animated={true}
-            />
-            <ProgressBar
-              value={90}
-              max={100}
-              label="Storage Usage"
-              showPercentage={true}
-              variant="warning"
-              size="lg"
-              striped={true}
-            />
-          </div>
-        </Card>
-      </Grid>
-
-      {/* Tooltip & Command Palette Section */}
-      <Grid columns={2} gap="lg" style={{ marginBottom: "40px" }}>
-        <Card title="Tooltip Examples" variant="outlined">
-          <div
-            style={{
-              display: "flex",
-              gap: "16px",
-              alignItems: "center",
-              flexWrap: "wrap",
-            }}
-          >
-            <Tooltip content="This is a tooltip on top" placement="top">
-              <Button variant="outline">Hover me (top)</Button>
-            </Tooltip>
-            <Tooltip
-              content="This is a tooltip on bottom"
-              placement="bottom"
-              variant="dark"
-            >
-              <Button variant="outline">Hover me (bottom)</Button>
-            </Tooltip>
-            <Tooltip
-              content="This is a tooltip on left"
-              placement="left"
-              variant="light"
-            >
-              <Button variant="outline">Hover me (left)</Button>
-            </Tooltip>
-            <Tooltip content="This is a tooltip on right" placement="right">
-              <Button variant="outline">Hover me (right)</Button>
-            </Tooltip>
-          </div>
-        </Card>
-
-        <Card title="Command Palette" variant="outlined">
-          <div
-            style={{ display: "flex", flexDirection: "column", gap: "12px" }}
-          >
-            <Text variant="body" style={{ marginBottom: "8px" }}>
-              Press the button below to open the command palette:
-            </Text>
-            <Button
-              variant="primary"
-              onClick={() => setIsCommandPaletteOpen(true)}
-              fullWidth
-            >
-              Open Command Palette (⌘K)
-            </Button>
-            <Text variant="small" color="#6b7280">
-              Try searching for "create", "settings", or "help"
-            </Text>
-          </div>
-        </Card>
-      </Grid>
-
-      {/* Separator & Toggle Group Section */}
-      <Grid columns={2} gap="lg" style={{ marginBottom: "40px" }}>
-        <Card title="Separator Examples" variant="outlined">
-          <div
-            style={{ display: "flex", flexDirection: "column", gap: "16px" }}
-          >
-            <div>
-              <Text
-                variant="small"
-                weight="medium"
-                style={{ marginBottom: "8px" }}
-              >
-                Horizontal Separators:
-              </Text>
-              <div
-                style={{ display: "flex", flexDirection: "column", gap: "8px" }}
-              >
-                <Separator variant="default" />
-                <Separator variant="thick" />
-                <Separator variant="dashed" />
-                <Separator variant="dotted" />
-              </div>
-            </div>
-            <div>
-              <Text
-                variant="small"
-                weight="medium"
-                style={{ marginBottom: "8px" }}
-              >
-                Vertical Separators:
-              </Text>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "8px",
-                  height: "40px",
-                }}
-              >
-                <Text variant="small">Left</Text>
-                <Separator orientation="vertical" variant="default" />
-                <Text variant="small">Middle</Text>
-                <Separator orientation="vertical" variant="thick" />
-                <Text variant="small">Right</Text>
-              </div>
-            </div>
-          </div>
-        </Card>
-
-        <Card title="Toggle Group (Text Formatting)" variant="outlined">
-          <div
-            style={{ display: "flex", flexDirection: "column", gap: "16px" }}
-          >
-            <div>
-              <Text
-                variant="small"
-                weight="medium"
-                style={{ marginBottom: "8px" }}
-              >
-                Text Formatting:
-              </Text>
-              <ToggleGroup
-                items={toggleGroupItems}
-                value={toggleGroupValue}
-                onChange={setToggleGroupValue}
-                type="multiple"
-                variant="default"
-                size="md"
-              />
-            </div>
-            <div>
-              <Text
-                variant="small"
-                weight="medium"
-                style={{ marginBottom: "8px" }}
-              >
-                Single Selection:
-              </Text>
-              <ToggleGroup
-                items={[
-                  { value: "left", label: "Left", icon: "⬅️" },
-                  { value: "center", label: "Center", icon: "↔️" },
-                  { value: "right", label: "Right", icon: "➡️" },
-                ]}
-                type="single"
-                variant="outlined"
-                size="sm"
-              />
-            </div>
-            <div>
-              <Text
-                variant="small"
-                weight="medium"
-                style={{ marginBottom: "8px" }}
-              >
-                Filled Variant:
-              </Text>
-              <ToggleGroup
-                items={[
-                  { value: "grid", label: "Grid", icon: "⊞" },
-                  { value: "list", label: "List", icon: "☰" },
-                ]}
-                type="single"
-                variant="filled"
-                size="lg"
-              />
-            </div>
-          </div>
-        </Card>
-      </Grid>
-
-      {/* TextArea Section */}
-      <Card
-        title="TextArea Component"
-        variant="elevated"
-        style={{ marginBottom: "40px" }}
-      >
-        <Grid columns={2} gap="lg">
-          <div>
-            <Text
-              variant="small"
-              weight="medium"
-              style={{ marginBottom: "12px" }}
-            >
-              Basic TextArea:
-            </Text>
-            <TextArea
-              title="Comments"
-              placeholder="Enter your comments here..."
-              value={textAreaValue}
-              onChange={setTextAreaValue}
-              rows={4}
-              variant="default"
-              size="md"
-            />
-          </div>
-          <div>
-            <Text
-              variant="small"
-              weight="medium"
-              style={{ marginBottom: "12px" }}
-            >
-              Advanced TextArea:
-            </Text>
-            <TextArea
-              title="Description"
-              description="Provide a detailed description of your project"
-              placeholder="Describe your project..."
-              rows={6}
-              variant="outlined"
-              size="lg"
-              maxLength={500}
-              resize="vertical"
-              required
-            />
-          </div>
-        </Grid>
-      </Card>
-
-      {/* Switch & Theme Switch Section */}
-      <Grid columns={2} gap="lg" style={{ marginBottom: "40px" }}>
-        <Card title="Switch Components" variant="outlined">
-          <div
-            style={{ display: "flex", flexDirection: "column", gap: "20px" }}
-          >
-            <div>
-              <Text
-                variant="small"
-                weight="medium"
-                style={{ marginBottom: "12px" }}
-              >
-                Basic Switches:
-              </Text>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "12px",
-                }}
-              >
-                <Switch
-                  label="Enable Notifications"
-                  description="Receive email notifications for important updates"
-                  checked={switchStates.notifications}
-                  onChange={(checked) =>
-                    setSwitchStates((prev) => ({
-                      ...prev,
-                      notifications: checked,
-                    }))
-                  }
-                  variant="default"
-                  size="md"
-                />
-                <Switch
-                  label="Auto-save Changes"
-                  description="Automatically save your work as you type"
-                  checked={switchStates.autoSave}
-                  onChange={(checked) =>
-                    setSwitchStates((prev) => ({ ...prev, autoSave: checked }))
-                  }
-                  variant="success"
-                  size="md"
-                />
-                <Switch
-                  label="Public Profile"
-                  description="Make your profile visible to other users"
-                  checked={switchStates.publicProfile}
-                  onChange={(checked) =>
-                    setSwitchStates((prev) => ({
-                      ...prev,
-                      publicProfile: checked,
-                    }))
-                  }
-                  variant="warning"
-                  size="md"
-                />
-              </div>
-            </div>
-
-            <div>
-              <Text
-                variant="small"
-                weight="medium"
-                style={{ marginBottom: "12px" }}
-              >
-                Different Sizes:
-              </Text>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "12px",
-                }}
-              >
-                <Switch
-                  label="Small Switch"
-                  checked={switchStates.notifications}
-                  onChange={(checked) =>
-                    setSwitchStates((prev) => ({
-                      ...prev,
-                      notifications: checked,
-                    }))
-                  }
-                  size="sm"
-                />
-                <Switch
-                  label="Medium Switch"
-                  checked={switchStates.autoSave}
-                  onChange={(checked) =>
-                    setSwitchStates((prev) => ({ ...prev, autoSave: checked }))
-                  }
-                  size="md"
-                />
-                <Switch
-                  label="Large Switch"
-                  checked={switchStates.publicProfile}
-                  onChange={(checked) =>
-                    setSwitchStates((prev) => ({
-                      ...prev,
-                      publicProfile: checked,
-                    }))
-                  }
-                  size="lg"
-                />
-              </div>
-            </div>
-          </div>
-        </Card>
-
-        <Card title="Theme Switch Component" variant="outlined">
-          <div
-            style={{ display: "flex", flexDirection: "column", gap: "20px" }}
-          >
-            <div>
-              <Text
-                variant="small"
-                weight="medium"
-                style={{ marginBottom: "12px" }}
-              >
-                Theme Selection:
-              </Text>
-              <ThemeSwitch
-                value={theme}
-                onChange={setTheme}
-                size="md"
-                variant="default"
-              />
-            </div>
-
-            <div>
-              <Text
-                variant="small"
-                weight="medium"
-                style={{ marginBottom: "12px" }}
-              >
-                Different Variants:
-              </Text>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "12px",
-                }}
-              >
-                <div>
-                  <Text variant="small" style={{ marginBottom: "8px" }}>
-                    Default Variant:
-                  </Text>
-                  <ThemeSwitch
-                    value={theme}
-                    onChange={setTheme}
-                    size="sm"
-                    variant="default"
-                  />
-                </div>
-                <div>
-                  <Text variant="small" style={{ marginBottom: "8px" }}>
-                    Outlined Variant:
-                  </Text>
-                  <ThemeSwitch
-                    value={theme}
-                    onChange={setTheme}
-                    size="sm"
-                    variant="outlined"
-                  />
-                </div>
-                <div>
-                  <Text variant="small" style={{ marginBottom: "8px" }}>
-                    Filled Variant:
-                  </Text>
-                  <ThemeSwitch
-                    value={theme}
-                    onChange={setTheme}
-                    size="sm"
-                    variant="filled"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <Text
-                variant="small"
-                weight="medium"
-                style={{ marginBottom: "12px" }}
-              >
-                Current Theme:
-              </Text>
-              <div
-                style={{
-                  padding: "12px",
-                  background: theme === "dark" ? "#1f2937" : "#f9fafb",
-                  borderRadius: "6px",
-                  border: `1px solid ${theme === "dark" ? "#374151" : "#e5e7eb"}`,
-                }}
-              >
-                <Text
-                  variant="small"
-                  color={theme === "dark" ? "#f9fafb" : "#374151"}
-                >
-                  Selected: {theme.charAt(0).toUpperCase() + theme.slice(1)}{" "}
-                  Mode
-                </Text>
-              </div>
-            </div>
-          </div>
-        </Card>
-      </Grid>
-
-      {/* Sidebar Section */}
-      <Card
-        title="Sidebar Component"
-        variant="elevated"
-        style={{ marginBottom: "40px" }}
-      >
-        <div style={{ display: "flex", gap: "20px", height: "400px" }}>
-          <Sidebar
-            items={sidebarItems}
-            isOpen={isSidebarOpen}
-            onToggle={setIsSidebarOpen}
-            variant="default"
-            size="md"
-            position="left"
-            collapsible={true}
-            onItemClick={(item) =>
-              console.log("Sidebar item clicked:", item.label)
-            }
-          />
-          <div
-            style={{
-              flex: 1,
-              padding: "20px",
-              background: "#f9fafb",
-              borderRadius: "8px",
-            }}
-          >
-            <Title level="h3" style={{ marginBottom: "12px" }}>
-              Main Content Area
+      {/* Hero Section */}
+      <section className="relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-32">
+          <div className="text-center">
+            <Badge variant="primary" className="mb-6">
+              🎉 Now with Vue.js support
+            </Badge>
+            <Title level="h1" className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 bg-clip-text text-transparent mb-6">
+              Build Beautiful UIs
+              <br />
+              <span className="text-blue-600">Faster</span>
             </Title>
-            <Text variant="body" style={{ marginBottom: "16px" }}>
-              This demonstrates how the sidebar component works alongside main
-              content. The sidebar can be collapsed and expanded, and includes
-              nested navigation items.
+            <Text variant="lead" className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+              A modern, comprehensive design system with individual component packages for React and Vue.js. 
+              Install only what you need, customize everything, and ship faster.
             </Text>
-            <div style={{ display: "flex", gap: "8px", marginTop: "16px" }}>
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-              >
-                Toggle Sidebar
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button variant="primary" size="lg" className="px-8 py-4 text-lg">
+                Get Started
               </Button>
-              <Button variant="primary" size="sm">
-                Action Button
+              <Button variant="outline" size="lg" className="px-8 py-4 text-lg">
+                View Components
               </Button>
+            </div>
+            <div className="mt-12 text-sm text-gray-500">
+              <code className="bg-gray-100 px-3 py-1 rounded">npm install @loom/button</code>
             </div>
           </div>
         </div>
-      </Card>
+        
+        {/* Background decoration */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-0 left-1/4 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+          <div className="absolute top-0 right-1/4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
+          <div className="absolute -bottom-8 left-1/3 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-2000"></div>
+        </div>
+      </section>
 
-      {/* Modal Component */}
+      {/* Stats Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-3xl font-bold text-gray-900 mb-2">40+</div>
+              <div className="text-gray-600">Components</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-gray-900 mb-2">2</div>
+              <div className="text-gray-600">Frameworks</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-gray-900 mb-2">100%</div>
+              <div className="text-gray-600">TypeScript</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-gray-900 mb-2">0</div>
+              <div className="text-gray-600">Bundle Bloat</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Components Showcase */}
+      <section id="components" className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <Title level="h2" className="text-4xl font-bold text-gray-900 mb-4">
+              Beautiful Components
+            </Title>
+            <Text variant="lead" className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Pre-built, accessible, and customizable components that work seamlessly together.
+            </Text>
+          </div>
+
+          <Grid columns={3} gap="lg" className="mb-16">
+            {components.map((component, index) => (
+              <Card key={index} variant="elevated" hoverable className="text-center p-6">
+                <div className="text-4xl mb-4">{component.icon}</div>
+                <Title level="h3" className="text-lg font-semibold mb-2">
+                  {component.name}
+                </Title>
+                <Text variant="body" className="text-gray-600">
+                  {component.description}
+                </Text>
+              </Card>
+            ))}
+          </Grid>
+
+          {/* Interactive Demo */}
+          <Card variant="elevated" className="p-8">
+            <div className="text-center mb-8">
+              <Title level="h3" className="text-2xl font-bold mb-4">
+                Try It Live
+              </Title>
+              <Text variant="body" className="text-gray-600">
+                See our components in action with this interactive demo
+              </Text>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="space-y-6">
+                <div>
+                  <Text variant="small" weight="medium" className="mb-2">Button Variants</Text>
+                  <div className="flex flex-wrap gap-2">
+                    <Button variant="primary" size="sm">Primary</Button>
+                    <Button variant="secondary" size="sm">Secondary</Button>
+                    <Button variant="outline" size="sm">Outline</Button>
+                    <Button variant="danger" size="sm">Danger</Button>
+                  </div>
+                </div>
+                
+                <div>
+                  <Text variant="small" weight="medium" className="mb-2">Form Elements</Text>
+                  <div className="space-y-3">
+                    <Input 
+                      title="Email" 
+                      placeholder="Enter your email" 
+                      value={email}
+                      onChange={(val) => setEmail(val)}
+                    />
+                    <div className="flex items-center space-x-2">
+                      <Switch 
+                        checked={isSubscribed}
+                        onChange={setIsSubscribed}
+                      />
+                      <Text variant="small">Subscribe to updates</Text>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="space-y-6">
+                <div>
+                  <Text variant="small" weight="medium" className="mb-2">Progress Indicators</Text>
+                  <div className="space-y-3">
+                    <ProgressBar value={75} label="Project Progress" showPercentage />
+                    <ProgressBar value={45} label="Upload Status" variant="success" showPercentage />
+                    <ProgressBar value={90} label="Storage Usage" variant="warning" showPercentage />
+                  </div>
+                </div>
+                
+                <div>
+                  <Text variant="small" weight="medium" className="mb-2">User Elements</Text>
+                  <div className="flex items-center space-x-4">
+                    <Avatar name="John Doe" size="md" status="online" />
+                    <div>
+                      <Text variant="small" weight="medium">John Doe</Text>
+                      <div className="flex space-x-1">
+                        <Badge variant="success">Active</Badge>
+                        <Badge variant="primary">Pro</Badge>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section id="features" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <Title level="h2" className="text-4xl font-bold text-gray-900 mb-4">
+              Why Choose Loom?
+            </Title>
+            <Text variant="lead" className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Built for modern development workflows with performance and developer experience in mind.
+            </Text>
+          </div>
+
+          <Grid columns={2} gap="lg">
+            {features.map((feature, index) => (
+              <Card key={index} variant="outlined" className="p-6">
+                <div className="flex items-start space-x-4">
+                  <div className="text-3xl">{feature.icon}</div>
+                  <div>
+                    <Title level="h3" className="text-lg font-semibold mb-2">
+                      {feature.title}
+                    </Title>
+                    <Text variant="body" className="text-gray-600">
+                      {feature.description}
+                    </Text>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </Grid>
+        </div>
+      </section>
+
+      {/* Analytics Demo */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <Title level="h2" className="text-4xl font-bold text-gray-900 mb-4">
+              Data Visualization
+            </Title>
+            <Text variant="lead" className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Beautiful charts and data visualization components built right in.
+            </Text>
+          </div>
+
+          <Grid columns={2} gap="lg">
+            <Card variant="elevated" className="p-6">
+              <Title level="h3" className="text-lg font-semibold mb-4">
+                Quarterly Performance
+              </Title>
+              <BarChart
+                title="Quarterly Performance"
+                data={performanceData}
+                showValues={true}
+                showDescriptions={true}
+                orientation="vertical"
+                variant="default"
+                size="md"
+              />
+            </Card>
+            
+            <Card variant="elevated" className="p-6">
+              <Title level="h3" className="text-lg font-semibold mb-4">
+                Growth Trend
+              </Title>
+              <LineChart
+                title="Growth Trend"
+                data={growthData}
+                showValues={true}
+                showDescriptions={true}
+                variant="default"
+                size="md"
+                showGrid={true}
+                showDots={true}
+              />
+            </Card>
+          </Grid>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <Title level="h2" className="text-4xl font-bold text-white mb-4">
+            Ready to Get Started?
+          </Title>
+          <Text variant="lead" className="text-xl text-blue-100 mb-8">
+            Join thousands of developers building beautiful UIs with Loom Design System.
+          </Text>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button 
+              variant="secondary" 
+              size="lg" 
+              className="px-8 py-4 text-lg"
+              onClick={() => setIsModalOpen(true)}
+            >
+              Start Building
+            </Button>
+            <Button variant="outline" size="lg" className="px-8 py-4 text-lg text-white border-white hover:bg-white hover:text-blue-600">
+              View Documentation
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-4 gap-8">
+            <div>
+              <div className="flex items-center space-x-2 mb-4">
+                <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-sm">L</span>
+                </div>
+                <span className="text-xl font-bold">Loom</span>
+              </div>
+              <Text variant="body" className="text-gray-400">
+                A modern design system for building beautiful, accessible user interfaces.
+              </Text>
+            </div>
+            
+            <div>
+              <Title level="h4" className="text-lg font-semibold mb-4">Components</Title>
+              <div className="space-y-2">
+                <a href="#" className="block text-gray-400 hover:text-white transition-colors">Buttons</a>
+                <a href="#" className="block text-gray-400 hover:text-white transition-colors">Forms</a>
+                <a href="#" className="block text-gray-400 hover:text-white transition-colors">Navigation</a>
+                <a href="#" className="block text-gray-400 hover:text-white transition-colors">Data Display</a>
+              </div>
+            </div>
+            
+            <div>
+              <Title level="h4" className="text-lg font-semibold mb-4">Resources</Title>
+              <div className="space-y-2">
+                <a href="#" className="block text-gray-400 hover:text-white transition-colors">Documentation</a>
+                <a href="#" className="block text-gray-400 hover:text-white transition-colors">Examples</a>
+                <a href="#" className="block text-gray-400 hover:text-white transition-colors">GitHub</a>
+                <a href="#" className="block text-gray-400 hover:text-white transition-colors">Changelog</a>
+              </div>
+            </div>
+            
+            <div>
+              <Title level="h4" className="text-lg font-semibold mb-4">Community</Title>
+              <div className="space-y-2">
+                <a href="#" className="block text-gray-400 hover:text-white transition-colors">Discord</a>
+                <a href="#" className="block text-gray-400 hover:text-white transition-colors">Twitter</a>
+                <a href="#" className="block text-gray-400 hover:text-white transition-colors">Blog</a>
+                <a href="#" className="block text-gray-400 hover:text-white transition-colors">Support</a>
+              </div>
+            </div>
+          </div>
+          
+          <Separator className="my-8" />
+          
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <Text variant="small" className="text-gray-400">
+              © 2024 Loom Design System. All rights reserved.
+            </Text>
+            <div className="flex space-x-6 mt-4 md:mt-0">
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy</a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">Terms</a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors">License</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      {/* Modal */}
       <Modal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        title="Settings Modal"
+        title="Get Started with Loom"
         size="md"
         backdropBlur
       >
-        <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+        <div className="space-y-6">
           <Text variant="body">
-            This is a modal dialog with backdrop blur effect. You can add any
-            content here.
+            Ready to start building with Loom? Choose your framework and get started in minutes.
           </Text>
-          <Input title="Setting Name" placeholder="Enter setting name" />
-          <Range
-            title="Setting Value"
-            min={0}
-            max={100}
-            onChange={(val) => console.log("Setting value:", val)}
-          />
-          <div
-            style={{ display: "flex", gap: "8px", justifyContent: "flex-end" }}
-          >
+          
+          <div className="space-y-4">
+            <div className="p-4 border border-gray-200 rounded-lg">
+              <Title level="h4" className="text-lg font-semibold mb-2">React</Title>
+              <Text variant="small" className="text-gray-600 mb-3">
+                Install individual components or the full package
+              </Text>
+              <code className="bg-gray-100 px-3 py-1 rounded text-sm block">
+                npm install @loom/button
+              </code>
+            </div>
+            
+            <div className="p-4 border border-gray-200 rounded-lg">
+              <Title level="h4" className="text-lg font-semibold mb-2">Vue.js</Title>
+              <Text variant="small" className="text-gray-600 mb-3">
+                Vue 3 components with Composition API support
+              </Text>
+              <code className="bg-gray-100 px-3 py-1 rounded text-sm block">
+                npm install @loom-vue/button
+              </code>
+            </div>
+          </div>
+          
+          <div className="flex gap-3 justify-end">
             <Button variant="outline" onClick={() => setIsModalOpen(false)}>
               Cancel
             </Button>
             <Button variant="primary" onClick={() => setIsModalOpen(false)}>
-              Save
+              Get Started
             </Button>
           </div>
         </div>
       </Modal>
-
-      {/* Command Palette */}
-      <CommandPalette
-        isOpen={isCommandPaletteOpen}
-        onClose={() => setIsCommandPaletteOpen(false)}
-        commands={commandItems}
-        placeholder="Type a command or search..."
-      />
-    </main>
+    </div>
   );
 }

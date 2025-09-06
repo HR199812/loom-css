@@ -1,0 +1,26 @@
+{
+  "id": "components/commandpalette",
+  "title": "Command Palette Component",
+  "description": "A searchable command palette for quick actions.",
+  "source": "@site/docs/components/commandpalette.md",
+  "sourceDirName": "components",
+  "slug": "/components/commandpalette",
+  "permalink": "/docs/components/commandpalette",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HR199812/loom-css/tree/main/docs/components/commandpalette.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Checkbox Component",
+    "permalink": "/docs/components/checkbox"
+  },
+  "next": {
+    "title": "Date Input Component",
+    "permalink": "/docs/components/dateinput"
+  }
+}

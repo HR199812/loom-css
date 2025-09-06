@@ -1,0 +1,26 @@
+{
+  "id": "components/barchart",
+  "title": "Bar Chart Component",
+  "description": "A component for displaying data in bar chart format.",
+  "source": "@site/docs/components/barchart.md",
+  "sourceDirName": "components",
+  "slug": "/components/barchart",
+  "permalink": "/docs/components/barchart",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HR199812/loom-css/tree/main/docs/components/barchart.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Tooltip Component",
+    "permalink": "/docs/components/tooltip"
+  },
+  "next": {
+    "title": "Line Chart Component",
+    "permalink": "/docs/components/linechart"
+  }
+}

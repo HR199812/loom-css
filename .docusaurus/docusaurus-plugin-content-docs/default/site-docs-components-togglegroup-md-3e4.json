@@ -1,0 +1,26 @@
+{
+  "id": "components/togglegroup",
+  "title": "Toggle Group Component",
+  "description": "A group of toggle buttons for multiple selection.",
+  "source": "@site/docs/components/togglegroup.md",
+  "sourceDirName": "components",
+  "slug": "/components/togglegroup",
+  "permalink": "/docs/components/togglegroup",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HR199812/loom-css/tree/main/docs/components/togglegroup.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Toast Component",
+    "permalink": "/docs/components/toast"
+  },
+  "next": {
+    "title": "Tooltip Component",
+    "permalink": "/docs/components/tooltip"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "components/text",
+  "title": "Text Component",
+  "description": "A styled text component with various typography options.",
+  "source": "@site/docs/components/text.md",
+  "sourceDirName": "components",
+  "slug": "/components/text",
+  "permalink": "/docs/components/text",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HR199812/loom-css/tree/main/docs/components/text.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Tabs Component",
+    "permalink": "/docs/components/tabs"
+  },
+  "next": {
+    "title": "Textarea Component",
+    "permalink": "/docs/components/textarea"
+  }
+}

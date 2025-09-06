@@ -1,0 +1,126 @@
+/* 
+ * Loom Design System - Shadow Utilities
+ * Comprehensive shadow utility classes
+ */
+
+/* ===== BOX SHADOW ===== */
+.shadow-none { box-shadow: none; }
+.shadow-sm { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); }
+.shadow { box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); }
+.shadow-md { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
+.shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
+.shadow-xl { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+.shadow-2xl { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+.shadow-inner { box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06); }
+
+/* ===== COLORED SHADOWS ===== */
+/* Primary Shadows */
+.shadow-primary-sm { box-shadow: 0 1px 2px 0 rgba(59, 130, 246, 0.05); }
+.shadow-primary { box-shadow: 0 1px 3px 0 rgba(59, 130, 246, 0.1), 0 1px 2px 0 rgba(59, 130, 246, 0.06); }
+.shadow-primary-md { box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.1), 0 2px 4px -1px rgba(59, 130, 246, 0.06); }
+.shadow-primary-lg { box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.1), 0 4px 6px -2px rgba(59, 130, 246, 0.05); }
+.shadow-primary-xl { box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.1), 0 10px 10px -5px rgba(59, 130, 246, 0.04); }
+.shadow-primary-2xl { box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.25); }
+
+/* Success Shadows */
+.shadow-success-sm { box-shadow: 0 1px 2px 0 rgba(16, 185, 129, 0.05); }
+.shadow-success { box-shadow: 0 1px 3px 0 rgba(16, 185, 129, 0.1), 0 1px 2px 0 rgba(16, 185, 129, 0.06); }
+.shadow-success-md { box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.1), 0 2px 4px -1px rgba(16, 185, 129, 0.06); }
+.shadow-success-lg { box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.1), 0 4px 6px -2px rgba(16, 185, 129, 0.05); }
+.shadow-success-xl { box-shadow: 0 20px 25px -5px rgba(16, 185, 129, 0.1), 0 10px 10px -5px rgba(16, 185, 129, 0.04); }
+.shadow-success-2xl { box-shadow: 0 25px 50px -12px rgba(16, 185, 129, 0.25); }
+
+/* Warning Shadows */
+.shadow-warning-sm { box-shadow: 0 1px 2px 0 rgba(245, 158, 11, 0.05); }
+.shadow-warning { box-shadow: 0 1px 3px 0 rgba(245, 158, 11, 0.1), 0 1px 2px 0 rgba(245, 158, 11, 0.06); }
+.shadow-warning-md { box-shadow: 0 4px 6px -1px rgba(245, 158, 11, 0.1), 0 2px 4px -1px rgba(245, 158, 11, 0.06); }
+.shadow-warning-lg { box-shadow: 0 10px 15px -3px rgba(245, 158, 11, 0.1), 0 4px 6px -2px rgba(245, 158, 11, 0.05); }
+.shadow-warning-xl { box-shadow: 0 20px 25px -5px rgba(245, 158, 11, 0.1), 0 10px 10px -5px rgba(245, 158, 11, 0.04); }
+.shadow-warning-2xl { box-shadow: 0 25px 50px -12px rgba(245, 158, 11, 0.25); }
+
+/* Error Shadows */
+.shadow-error-sm { box-shadow: 0 1px 2px 0 rgba(239, 68, 68, 0.05); }
+.shadow-error { box-shadow: 0 1px 3px 0 rgba(239, 68, 68, 0.1), 0 1px 2px 0 rgba(239, 68, 68, 0.06); }
+.shadow-error-md { box-shadow: 0 4px 6px -1px rgba(239, 68, 68, 0.1), 0 2px 4px -1px rgba(239, 68, 68, 0.06); }
+.shadow-error-lg { box-shadow: 0 10px 15px -3px rgba(239, 68, 68, 0.1), 0 4px 6px -2px rgba(239, 68, 68, 0.05); }
+.shadow-error-xl { box-shadow: 0 20px 25px -5px rgba(239, 68, 68, 0.1), 0 10px 10px -5px rgba(239, 68, 68, 0.04); }
+.shadow-error-2xl { box-shadow: 0 25px 50px -12px rgba(239, 68, 68, 0.25); }
+
+/* ===== DROP SHADOWS ===== */
+.drop-shadow-none { filter: drop-shadow(0 0 #0000); }
+.drop-shadow-sm { filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.05)); }
+.drop-shadow { filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1)) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.06)); }
+.drop-shadow-md { filter: drop-shadow(0 4px 3px rgba(0, 0, 0, 0.07)) drop-shadow(0 2px 2px rgba(0, 0, 0, 0.06)); }
+.drop-shadow-lg { filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04)) drop-shadow(0 4px 3px rgba(0, 0, 0, 0.1)); }
+.drop-shadow-xl { filter: drop-shadow(0 20px 13px rgba(0, 0, 0, 0.03)) drop-shadow(0 8px 5px rgba(0, 0, 0, 0.08)); }
+.drop-shadow-2xl { filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.15)); }
+
+/* ===== CUSTOM SHADOWS ===== */
+/* Glow Effects */
+.shadow-glow { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+.shadow-glow-sm { box-shadow: 0 0 10px rgba(59, 130, 246, 0.2); }
+.shadow-glow-lg { box-shadow: 0 0 30px rgba(59, 130, 246, 0.4); }
+
+.shadow-glow-success { box-shadow: 0 0 20px rgba(16, 185, 129, 0.3); }
+.shadow-glow-warning { box-shadow: 0 0 20px rgba(245, 158, 11, 0.3); }
+.shadow-glow-error { box-shadow: 0 0 20px rgba(239, 68, 68, 0.3); }
+
+/* Elevation Shadows */
+.shadow-elevation-1 { box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+.shadow-elevation-2 { box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+.shadow-elevation-3 { box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
+.shadow-elevation-4 { box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
+.shadow-elevation-5 { box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22); }
+
+/* Floating Shadows */
+.shadow-float { box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); }
+.shadow-float-sm { box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); }
+.shadow-float-lg { box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12); }
+
+/* Card Shadows */
+.shadow-card { box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06); }
+.shadow-card-hover { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
+.shadow-card-active { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); }
+
+/* Button Shadows */
+.shadow-button { box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); }
+.shadow-button-hover { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
+.shadow-button-active { box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06); }
+
+/* Modal Shadows */
+.shadow-modal { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+.shadow-modal-backdrop { box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.5); }
+
+/* Tooltip Shadows */
+.shadow-tooltip { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
+
+/* ===== RESPONSIVE SHADOWS ===== */
+/* These can be used with responsive prefixes like sm:, md:, lg:, xl: */
+/* Example: sm:shadow-lg, md:shadow-xl */
+
+/* ===== DARK MODE SHADOWS ===== */
+@media (prefers-color-scheme: dark) {
+  .shadow-sm { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3); }
+  .shadow { box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px 0 rgba(0, 0, 0, 0.3); }
+  .shadow-md { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3); }
+  .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3); }
+  .shadow-xl { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.3); }
+  .shadow-2xl { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); }
+  .shadow-inner { box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.3); }
+}
+
+/* ===== FOCUS SHADOWS ===== */
+.focus\:shadow-outline:focus { box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5); }
+.focus\:shadow-outline-primary:focus { box-shadow: 0 0 0 3px var(--loom-color-primary, #3b82f6); }
+.focus\:shadow-outline-success:focus { box-shadow: 0 0 0 3px var(--loom-color-success, #10b981); }
+.focus\:shadow-outline-warning:focus { box-shadow: 0 0 0 3px var(--loom-color-warning, #f59e0b); }
+.focus\:shadow-outline-error:focus { box-shadow: 0 0 0 3px var(--loom-color-error, #ef4444); }
+
+/* ===== HOVER SHADOWS ===== */
+.hover\:shadow-sm:hover { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); }
+.hover\:shadow:hover { box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); }
+.hover\:shadow-md:hover { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
+.hover\:shadow-lg:hover { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
+.hover\:shadow-xl:hover { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+.hover\:shadow-2xl:hover { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+.hover\:shadow-none:hover { box-shadow: none; }

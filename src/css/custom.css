@@ -1,0 +1,312 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #3b82f6;
+  --ifm-color-primary-dark: #2563eb;
+  --ifm-color-primary-darker: #1d4ed8;
+  --ifm-color-primary-darkest: #1e40af;
+  --ifm-color-primary-light: #60a5fa;
+  --ifm-color-primary-lighter: #93c5fd;
+  --ifm-color-primary-lightest: #dbeafe;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  
+  /* loom-css custom variables */
+  --loom-primary: #3b82f6;
+  --loom-secondary: #64748b;
+  --loom-success: #10b981;
+  --loom-warning: #f59e0b;
+  --loom-error: #ef4444;
+  --loom-info: #3b82f6;
+  
+  /* Typography */
+  --loom-font-sans: 'Inter', system-ui, sans-serif;
+  --loom-font-serif: 'Georgia', serif;
+  --loom-font-mono: 'JetBrains Mono', monospace;
+  
+  /* Spacing */
+  --loom-space-1: 0.25rem;
+  --loom-space-2: 0.5rem;
+  --loom-space-3: 0.75rem;
+  --loom-space-4: 1rem;
+  --loom-space-6: 1.5rem;
+  --loom-space-8: 2rem;
+  
+  /* Border Radius */
+  --loom-radius-sm: 0.125rem;
+  --loom-radius-md: 0.375rem;
+  --loom-radius-lg: 0.5rem;
+  --loom-radius-xl: 0.75rem;
+  
+  /* Shadows */
+  --loom-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --loom-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --loom-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --loom-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #60a5fa;
+  --ifm-color-primary-dark: #3b82f6;
+  --ifm-color-primary-darker: #2563eb;
+  --ifm-color-primary-darkest: #1d4ed8;
+  --ifm-color-primary-light: #93c5fd;
+  --ifm-color-primary-lighter: #bfdbfe;
+  --ifm-color-primary-lightest: #dbeafe;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  
+  /* Dark theme loom-css variables */
+  --loom-primary: #60a5fa;
+  --loom-secondary: #94a3b8;
+  --loom-success: #34d399;
+  --loom-warning: #fbbf24;
+  --loom-error: #f87171;
+  --loom-info: #60a5fa;
+}
+
+/* Custom loom-css styles */
+.loom-brand {
+  font-family: var(--loom-font-sans);
+  font-weight: 600;
+  color: var(--loom-primary);
+}
+
+.loom-hero {
+  background: linear-gradient(135deg, var(--loom-primary) 0%, var(--loom-secondary) 100%);
+  color: white;
+  padding: var(--loom-space-8) 0;
+  text-align: center;
+}
+
+.loom-hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: var(--loom-space-4);
+}
+
+.loom-hero p {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.loom-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--loom-space-6);
+  margin: var(--loom-space-8) 0;
+}
+
+.loom-feature-card {
+  background: var(--ifm-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--loom-radius-lg);
+  padding: var(--loom-space-6);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.loom-feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--loom-shadow-lg);
+}
+
+.loom-feature-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto var(--loom-space-4);
+  background: var(--loom-primary);
+  border-radius: var(--loom-radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.loom-code-block {
+  background: var(--ifm-code-background);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--loom-radius-md);
+  padding: var(--loom-space-4);
+  margin: var(--loom-space-4) 0;
+  overflow-x: auto;
+}
+
+.loom-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--loom-space-2) var(--loom-space-4);
+  border: 1px solid transparent;
+  border-radius: var(--loom-radius-md);
+  font-family: var(--loom-font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: var(--loom-primary);
+  color: white;
+}
+
+.loom-button:hover {
+  background: var(--loom-primary-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--loom-shadow-md);
+}
+
+.loom-button--secondary {
+  background: var(--loom-secondary);
+  color: white;
+}
+
+.loom-button--secondary:hover {
+  background: var(--ifm-color-emphasis-600);
+}
+
+.loom-button--outline {
+  background: transparent;
+  color: var(--loom-primary);
+  border-color: var(--loom-primary);
+}
+
+.loom-button--outline:hover {
+  background: var(--loom-primary);
+  color: white;
+}
+
+/* Live code block styles */
+.loom-live-code {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--loom-radius-lg);
+  overflow: hidden;
+  margin: var(--loom-space-4) 0;
+}
+
+.loom-live-code-header {
+  background: var(--ifm-color-emphasis-100);
+  padding: var(--loom-space-2) var(--loom-space-4);
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.loom-live-code-content {
+  padding: var(--loom-space-4);
+  background: var(--ifm-background-color);
+}
+
+.loom-live-code-editor {
+  background: var(--ifm-code-background);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--loom-radius-md);
+  padding: var(--loom-space-4);
+  margin-top: var(--loom-space-4);
+  font-family: var(--loom-font-mono);
+  font-size: 0.875rem;
+  overflow-x: auto;
+}
+
+/* Component showcase styles */
+.loom-component-showcase {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--loom-radius-lg);
+  overflow: hidden;
+  margin: var(--loom-space-6) 0;
+}
+
+.loom-component-showcase-header {
+  background: var(--ifm-color-emphasis-100);
+  padding: var(--loom-space-4);
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.loom-component-showcase-content {
+  padding: var(--loom-space-6);
+  background: var(--ifm-background-color);
+}
+
+.loom-component-showcase-code {
+  background: var(--ifm-code-background);
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  padding: var(--loom-space-4);
+  font-family: var(--loom-font-mono);
+  font-size: 0.875rem;
+  overflow-x: auto;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .loom-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .loom-hero p {
+    font-size: 1rem;
+  }
+  
+  .loom-feature-grid {
+    grid-template-columns: 1fr;
+    gap: var(--loom-space-4);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ifm-color-emphasis-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ifm-color-emphasis-300);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ifm-color-emphasis-400);
+}
+
+/* Focus styles */
+.loom-button:focus,
+.loom-button:focus-visible {
+  outline: 2px solid var(--loom-primary);
+  outline-offset: 2px;
+}
+
+/* Animation utilities */
+@keyframes loom-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.loom-fade-in {
+  animation: loom-fade-in 0.5s ease-out;
+}
+
+/* Print styles */
+@media print {
+  .loom-button {
+    background: white !important;
+    color: black !important;
+    border: 1px solid black !important;
+  }
+}

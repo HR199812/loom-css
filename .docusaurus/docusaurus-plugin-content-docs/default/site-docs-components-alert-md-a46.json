@@ -1,0 +1,26 @@
+{
+  "id": "components/alert",
+  "title": "Alert Component",
+  "description": "A component for displaying important messages and notifications.",
+  "source": "@site/docs/components/alert.md",
+  "sourceDirName": "components",
+  "slug": "/components/alert",
+  "permalink": "/docs/components/alert",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HR199812/loom-css/tree/main/docs/components/alert.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Accordion Component",
+    "permalink": "/docs/components/accordion"
+  },
+  "next": {
+    "title": "Avatar Component",
+    "permalink": "/docs/components/avatar"
+  }
+}

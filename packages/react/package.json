@@ -1,6 +1,7 @@
 {
   "name": "@loom/react",
   "version": "0.0.1",
+  "description": "Loom Design System - Complete React Components Library (Meta Package)",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -10,7 +11,12 @@
   },
   "dependencies": {
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "@loom/core": "*"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
   },
   "files": [
     "dist",
@@ -19,5 +25,23 @@
   "devDependencies": {
     "tsup": "^8.0.0",
     "typescript": "^5.0.0"
+  },
+  "keywords": [
+    "react",
+    "components",
+    "ui",
+    "design-system",
+    "loom",
+    "meta-package"
+  ],
+  "author": "Loom Contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/loom-design/loom",
+    "directory": "packages/react"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

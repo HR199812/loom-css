@@ -1,0 +1,26 @@
+{
+  "id": "components/toast",
+  "title": "Toast Component",
+  "description": "A notification component for displaying temporary messages.",
+  "source": "@site/docs/components/toast.md",
+  "sourceDirName": "components",
+  "slug": "/components/toast",
+  "permalink": "/docs/components/toast",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HR199812/loom-css/tree/main/docs/components/toast.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Title Component",
+    "permalink": "/docs/components/title"
+  },
+  "next": {
+    "title": "Toggle Group Component",
+    "permalink": "/docs/components/togglegroup"
+  }
+}

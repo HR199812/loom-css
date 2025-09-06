@@ -1,0 +1,49 @@
+{
+  "name": "@loom/table",
+  "version": "0.0.1",
+  "description": "Loom Design System - Table Component",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "@loom/core": "*"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0",
+    "@repo/typescript-config": "*"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "keywords": [
+    "react",
+    "component",
+    "table",
+    "ui",
+    "design-system",
+    "loom"
+  ],
+  "author": "Loom Contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/loom-design/loom",
+    "directory": "packages/components/table"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,0 +1,253 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/docs",
+          "mainDocId": "intro",
+          "docs": [
+            {
+              "id": "components/accordion",
+              "path": "/docs/components/accordion",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/alert",
+              "path": "/docs/components/alert",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/avatar",
+              "path": "/docs/components/avatar",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/badge",
+              "path": "/docs/components/badge",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/barchart",
+              "path": "/docs/components/barchart",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/breadcrumb",
+              "path": "/docs/components/breadcrumb",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/button",
+              "path": "/docs/components/button",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/calendar",
+              "path": "/docs/components/calendar",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/card",
+              "path": "/docs/components/card",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/carousel",
+              "path": "/docs/components/carousel",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/chat",
+              "path": "/docs/components/chat",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/checkbox",
+              "path": "/docs/components/checkbox",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/commandpalette",
+              "path": "/docs/components/commandpalette",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/dateinput",
+              "path": "/docs/components/dateinput",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/dropdown",
+              "path": "/docs/components/dropdown",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/grid",
+              "path": "/docs/components/grid",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/input",
+              "path": "/docs/components/input",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/linechart",
+              "path": "/docs/components/linechart",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/lists",
+              "path": "/docs/components/lists",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/modal",
+              "path": "/docs/components/modal",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/navigation",
+              "path": "/docs/components/navigation",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/otpinput",
+              "path": "/docs/components/otpinput",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/pagination",
+              "path": "/docs/components/pagination",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/paymentplan",
+              "path": "/docs/components/paymentplan",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/progressbar",
+              "path": "/docs/components/progressbar",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/radio",
+              "path": "/docs/components/radio",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/range",
+              "path": "/docs/components/range",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/searchinput",
+              "path": "/docs/components/searchinput",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/separator",
+              "path": "/docs/components/separator",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/sidebar",
+              "path": "/docs/components/sidebar",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/switch",
+              "path": "/docs/components/switch",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/table",
+              "path": "/docs/components/table",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/tabs",
+              "path": "/docs/components/tabs",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/text",
+              "path": "/docs/components/text",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/textarea",
+              "path": "/docs/components/textarea",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/themeswitch",
+              "path": "/docs/components/themeswitch",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/title",
+              "path": "/docs/components/title",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/toast",
+              "path": "/docs/components/toast",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/togglegroup",
+              "path": "/docs/components/togglegroup",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "components/tooltip",
+              "path": "/docs/components/tooltip",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "design-system/overview",
+              "path": "/docs/design-system/overview",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "installation",
+              "path": "/docs/installation",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "intro",
+              "path": "/docs/intro",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "react/getting-started",
+              "path": "/docs/react/getting-started",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "vue/getting-started",
+              "path": "/docs/vue/getting-started",
+              "sidebar": "tutorialSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "tutorialSidebar": {
+              "link": {
+                "path": "/docs/intro",
+                "label": "intro"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

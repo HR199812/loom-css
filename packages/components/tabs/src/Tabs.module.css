@@ -1,0 +1,270 @@
+.tabs {
+  width: 100%;
+}
+
+.tabList {
+  display: flex;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 16px;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border: none;
+  background: none;
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+}
+
+.tab:hover:not(.disabledTab) {
+  color: #374151;
+  background: #f9fafb;
+}
+
+.tab.activeTab {
+  color: #3b82f6;
+  border-bottom-color: #3b82f6;
+}
+
+.tab.disabledTab {
+  color: #d1d5db;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.tabIcon {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+.tabLabel {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.tabContent {
+  width: 100%;
+}
+
+.tabPanel {
+  display: none;
+}
+
+.tabPanel.activePanel {
+  display: block;
+}
+
+/* Variants */
+.default .tabList {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.pills .tabList {
+  border-bottom: none;
+  gap: 4px;
+}
+
+.pills .tab {
+  border-radius: 6px;
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.pills .tab.activeTab {
+  background: #3b82f6;
+  color: white;
+  border-bottom-color: transparent;
+}
+
+.pills .tab:hover:not(.disabledTab) {
+  background: #f3f4f6;
+}
+
+.pills .tab.activeTab:hover:not(.disabledTab) {
+  background: #1d4ed8;
+}
+
+.underline .tabList {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.underline .tab {
+  border-bottom: 2px solid transparent;
+  background: none;
+}
+
+.underline .tab.activeTab {
+  border-bottom-color: #3b82f6;
+  background: none;
+}
+
+.card .tabList {
+  border-bottom: none;
+  background: #f9fafb;
+  border-radius: 8px 8px 0 0;
+  padding: 4px;
+  gap: 2px;
+}
+
+.card .tab {
+  border-radius: 6px;
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.card .tab.activeTab {
+  background: white;
+  color: #3b82f6;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-bottom-color: transparent;
+}
+
+.card .tabContent {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  padding: 16px;
+}
+
+/* Sizes */
+.sm .tab {
+  padding: 8px 12px;
+  font-size: 12px;
+}
+
+.sm .tabLabel {
+  font-size: 12px;
+}
+
+.sm .tabIcon {
+  font-size: 14px;
+}
+
+.md .tab {
+  padding: 12px 16px;
+  font-size: 14px;
+}
+
+.md .tabLabel {
+  font-size: 14px;
+}
+
+.md .tabIcon {
+  font-size: 16px;
+}
+
+.lg .tab {
+  padding: 16px 20px;
+  font-size: 16px;
+}
+
+.lg .tabLabel {
+  font-size: 16px;
+}
+
+.lg .tabIcon {
+  font-size: 18px;
+}
+
+/* Orientation */
+.vertical {
+  display: flex;
+  gap: 16px;
+}
+
+.vertical .tabList {
+  flex-direction: column;
+  border-bottom: none;
+  border-right: 1px solid #e5e7eb;
+  margin-bottom: 0;
+  margin-right: 16px;
+  min-width: 200px;
+}
+
+.vertical .tab {
+  border-bottom: none;
+  border-right: 2px solid transparent;
+  text-align: left;
+  justify-content: flex-start;
+}
+
+.vertical .tab.activeTab {
+  border-bottom-color: transparent;
+  border-right-color: #3b82f6;
+}
+
+.vertical .tabContent {
+  flex: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tabList {
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .tabList::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .tab {
+    flex-shrink: 0;
+  }
+  
+  .vertical {
+    flex-direction: column;
+  }
+  
+  .vertical .tabList {
+    flex-direction: row;
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+    margin-right: 0;
+    margin-bottom: 16px;
+    min-width: auto;
+    overflow-x: auto;
+  }
+  
+  .vertical .tab {
+    border-right: none;
+    border-bottom: 2px solid transparent;
+  }
+  
+  .vertical .tab.activeTab {
+    border-right-color: transparent;
+    border-bottom-color: #3b82f6;
+  }
+}
+
+@media (max-width: 480px) {
+  .tab {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+  
+  .tabLabel {
+    font-size: 13px;
+  }
+  
+  .sm .tab {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+  
+  .sm .tabLabel {
+    font-size: 11px;
+  }
+}
+

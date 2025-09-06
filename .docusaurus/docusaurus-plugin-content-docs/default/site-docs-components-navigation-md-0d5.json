@@ -1,0 +1,26 @@
+{
+  "id": "components/navigation",
+  "title": "Navigation Component",
+  "description": "The Navigation component provides a flexible navigation bar with support for various layouts and menu items.",
+  "source": "@site/docs/components/navigation.md",
+  "sourceDirName": "components",
+  "slug": "/components/navigation",
+  "permalink": "/docs/components/navigation",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HR199812/loom-css/tree/main/docs/components/navigation.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Modal Component",
+    "permalink": "/docs/components/modal"
+  },
+  "next": {
+    "title": "Accordion Component",
+    "permalink": "/docs/components/accordion"
+  }
+}

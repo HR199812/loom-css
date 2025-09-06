@@ -1,0 +1,26 @@
+{
+  "id": "components/searchinput",
+  "title": "Search Input Component",
+  "description": "A specialized input component with search functionality.",
+  "source": "@site/docs/components/searchinput.md",
+  "sourceDirName": "components",
+  "slug": "/components/searchinput",
+  "permalink": "/docs/components/searchinput",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HR199812/loom-css/tree/main/docs/components/searchinput.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Range Component",
+    "permalink": "/docs/components/range"
+  },
+  "next": {
+    "title": "Separator Component",
+    "permalink": "/docs/components/separator"
+  }
+}

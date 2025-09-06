@@ -10,6 +10,10 @@
     "utilities-colors.css",
     "utilities-typography.css",
     "utilities-layout.css",
+    "utilities-flexbox.css",
+    "utilities-grid.css",
+    "utilities-borders.css",
+    "utilities-shadows.css",
     "loom-utilities.css",
     "UTILITIES.md"
   ],

@@ -1,0 +1,26 @@
+{
+  "id": "components/radio",
+  "title": "Radio Component",
+  "description": "A radio button component for single selection.",
+  "source": "@site/docs/components/radio.md",
+  "sourceDirName": "components",
+  "slug": "/components/radio",
+  "permalink": "/docs/components/radio",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HR199812/loom-css/tree/main/docs/components/radio.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Progress Bar Component",
+    "permalink": "/docs/components/progressbar"
+  },
+  "next": {
+    "title": "Range Component",
+    "permalink": "/docs/components/range"
+  }
+}

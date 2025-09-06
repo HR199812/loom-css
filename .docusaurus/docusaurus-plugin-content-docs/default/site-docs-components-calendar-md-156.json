@@ -1,0 +1,26 @@
+{
+  "id": "components/calendar",
+  "title": "Calendar Component",
+  "description": "A date picker component for selecting dates.",
+  "source": "@site/docs/components/calendar.md",
+  "sourceDirName": "components",
+  "slug": "/components/calendar",
+  "permalink": "/docs/components/calendar",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HR199812/loom-css/tree/main/docs/components/calendar.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Breadcrumb Component",
+    "permalink": "/docs/components/breadcrumb"
+  },
+  "next": {
+    "title": "Carousel Component",
+    "permalink": "/docs/components/carousel"
+  }
+}

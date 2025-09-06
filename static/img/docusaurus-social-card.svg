@@ -1,0 +1,45 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#764ba2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f093fb;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e0e7ff;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Decorative circles -->
+  <circle cx="100" cy="100" r="80" fill="white" opacity="0.1"/>
+  <circle cx="1100" cy="530" r="120" fill="white" opacity="0.1"/>
+  <circle cx="1000" cy="100" r="60" fill="white" opacity="0.15"/>
+  <circle cx="200" cy="500" r="100" fill="white" opacity="0.1"/>
+  
+  <!-- Main logo -->
+  <g transform="translate(500, 200)">
+    <circle cx="0" cy="0" r="60" fill="url(#logoGradient)" stroke="white" stroke-width="4"/>
+    <path d="M-30 -20 L-30 20 L30 20 L30 16 L-18 16 L-18 -20 Z" fill="#667eea"/>
+    <circle cx="45" cy="-15" r="8" fill="white" opacity="0.8"/>
+    <circle cx="-45" cy="15" r="6" fill="white" opacity="0.6"/>
+  </g>
+  
+  <!-- Title -->
+  <text x="600" y="350" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="white" text-anchor="middle">
+    loom-css
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="400" font-family="Arial, sans-serif" font-size="32" fill="white" opacity="0.9" text-anchor="middle">
+    Modern CSS Design System
+  </text>
+  
+  <!-- Features -->
+  <text x="600" y="450" font-family="Arial, sans-serif" font-size="24" fill="white" opacity="0.8" text-anchor="middle">
+    React • Vue • TypeScript • Accessible
+  </text>
+</svg>

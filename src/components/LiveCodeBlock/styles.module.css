@@ -1,0 +1,35 @@
+.live-code-block {
+  margin: 1rem 0;
+  border: 1px solid #e1e4e8;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.live-preview {
+  padding: 1rem;
+  background: #f6f8fa;
+  border-bottom: 1px solid #e1e4e8;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.live-editor {
+  background: #ffffff;
+}
+
+.live-editor textarea {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+}
+
+.live-error {
+  background: #ffeef0;
+  color: #d73a49;
+  padding: 0.5rem 1rem;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 12px;
+  border-top: 1px solid #fdbdbd;
+}

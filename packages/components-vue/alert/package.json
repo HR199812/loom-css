@@ -1,0 +1,48 @@
+{
+  "name": "@loom-vue/alert",
+  "version": "0.0.1",
+  "description": "Loom Design System - Alert Component for Vue.js",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "vue": "^3.3.0",
+    "@loom/core": "*"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0",
+    "@repo/typescript-config": "*"
+  },
+  "peerDependencies": {
+    "vue": ">=3.0.0"
+  },
+  "keywords": [
+    "vue",
+    "vue3",
+    "component",
+    "alert",
+    "ui",
+    "design-system",
+    "loom"
+  ],
+  "author": "Loom Contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/loom-design/loom",
+    "directory": "packages/components-vue/alert"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -89,7 +89,7 @@ export const Lists: React.FC<ListsProps> = ({
     listStyleType: style || undefined,
   };
 
-  const Tag = type as keyof JSX.IntrinsicElements;
+  const Tag = type as keyof React.JSX.IntrinsicElements;
 
   return (
     <Tag className={listClass} style={listStyle}>

@@ -1,0 +1,26 @@
+{
+  "id": "components/title",
+  "title": "Title Component",
+  "description": "A styled heading component with semantic HTML.",
+  "source": "@site/docs/components/title.md",
+  "sourceDirName": "components",
+  "slug": "/components/title",
+  "permalink": "/docs/components/title",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HR199812/loom-css/tree/main/docs/components/title.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Theme Switch Component",
+    "permalink": "/docs/components/themeswitch"
+  },
+  "next": {
+    "title": "Toast Component",
+    "permalink": "/docs/components/toast"
+  }
+}

@@ -68,7 +68,7 @@ export const Title: React.FC<TitleProps> = ({
     margin: margin || undefined,
   };
 
-  const Tag = level as keyof JSX.IntrinsicElements;
+  const Tag = level as keyof React.JSX.IntrinsicElements;
 
   return (
     <Tag className={titleClass} style={titleStyle}>

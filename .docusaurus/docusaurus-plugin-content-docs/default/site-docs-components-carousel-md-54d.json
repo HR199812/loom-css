@@ -1,0 +1,26 @@
+{
+  "id": "components/carousel",
+  "title": "Carousel Component",
+  "description": "A component for displaying content in a sliding carousel.",
+  "source": "@site/docs/components/carousel.md",
+  "sourceDirName": "components",
+  "slug": "/components/carousel",
+  "permalink": "/docs/components/carousel",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HR199812/loom-css/tree/main/docs/components/carousel.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Calendar Component",
+    "permalink": "/docs/components/calendar"
+  },
+  "next": {
+    "title": "Chat Component",
+    "permalink": "/docs/components/chat"
+  }
+}

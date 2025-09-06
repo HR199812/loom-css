@@ -1,0 +1,26 @@
+{
+  "id": "components/breadcrumb",
+  "title": "Breadcrumb Component",
+  "description": "A navigation component showing the current page location.",
+  "source": "@site/docs/components/breadcrumb.md",
+  "sourceDirName": "components",
+  "slug": "/components/breadcrumb",
+  "permalink": "/docs/components/breadcrumb",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HR199812/loom-css/tree/main/docs/components/breadcrumb.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Badge Component",
+    "permalink": "/docs/components/badge"
+  },
+  "next": {
+    "title": "Calendar Component",
+    "permalink": "/docs/components/calendar"
+  }
+}

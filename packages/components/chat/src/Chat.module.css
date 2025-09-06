@@ -1,0 +1,293 @@
+.chat {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;
+  max-height: 500px;
+}
+
+/* Variants */
+.default {
+  border-width: 1px;
+}
+
+.compact {
+  border-width: 1px;
+  border-radius: 8px;
+}
+
+.minimal {
+  border: none;
+  background: transparent;
+}
+
+/* Messages Container */
+.messagesContainer {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.messagesContainer::-webkit-scrollbar {
+  width: 6px;
+}
+
+.messagesContainer::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.messagesContainer::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.messagesContainer::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Message */
+.message {
+  display: flex;
+  gap: 12px;
+  max-width: 80%;
+}
+
+.message.user {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.message.bot {
+  align-self: flex-start;
+}
+
+/* Avatar */
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.user .avatar {
+  background: #3b82f6;
+  color: white;
+}
+
+.bot .avatar {
+  background: #10b981;
+  color: white;
+}
+
+/* Message Content */
+.messageContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.messageHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.senderName {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.timestamp {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+/* Message Text */
+.messageText {
+  background: #f9fafb;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.4;
+  word-wrap: break-word;
+  color: #374151;
+}
+
+.user .messageText {
+  background: #3b82f6;
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.bot .messageText {
+  background: #f3f4f6;
+  color: #374151;
+  border-bottom-left-radius: 4px;
+}
+
+/* Input Form */
+.inputForm {
+  border-top: 1px solid #e5e7eb;
+  padding: 16px;
+  background: white;
+}
+
+.inputContainer {
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+.messageInput {
+  flex: 1;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-family: inherit;
+  resize: none;
+  outline: none;
+  transition: border-color 0.2s;
+  min-height: 36px;
+  max-height: 120px;
+}
+
+.messageInput:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.messageInput:disabled {
+  background-color: #f9fafb;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.sendButton {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+  white-space: nowrap;
+  min-height: 36px;
+}
+
+.sendButton:hover:not(:disabled) {
+  background: #2563eb;
+}
+
+.sendButton:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.sendButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Compact Variant */
+.compact .messagesContainer {
+  padding: 12px;
+  gap: 12px;
+}
+
+.compact .avatar {
+  width: 28px;
+  height: 28px;
+  font-size: 14px;
+}
+
+.compact .messageText {
+  padding: 6px 10px;
+  font-size: 13px;
+}
+
+.compact .inputForm {
+  padding: 12px;
+}
+
+.compact .messageInput {
+  font-size: 13px;
+  padding: 6px 10px;
+  min-height: 32px;
+}
+
+.compact .sendButton {
+  padding: 6px 12px;
+  font-size: 13px;
+  min-height: 32px;
+}
+
+/* Minimal Variant */
+.minimal .messagesContainer {
+  padding: 0;
+  gap: 8px;
+}
+
+.minimal .inputForm {
+  border-top: none;
+  padding: 8px 0;
+  background: transparent;
+}
+
+.minimal .messageText {
+  background: transparent;
+  padding: 4px 0;
+  border-radius: 0;
+}
+
+.user.minimal .messageText {
+  background: transparent;
+  color: #3b82f6;
+}
+
+.bot.minimal .messageText {
+  background: transparent;
+  color: #374151;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .message {
+    max-width: 90%;
+  }
+  
+  .avatar {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+  
+  .messageText {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+  
+  .inputContainer {
+    gap: 6px;
+  }
+  
+  .messageInput {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}

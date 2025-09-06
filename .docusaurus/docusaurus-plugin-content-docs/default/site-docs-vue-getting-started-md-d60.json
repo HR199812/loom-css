@@ -1,0 +1,26 @@
+{
+  "id": "vue/getting-started",
+  "title": "Vue Getting Started",
+  "description": "Get up and running with loom-css in your Vue application. This guide will walk you through the basics of using loom-css components in Vue 3.",
+  "source": "@site/docs/vue/getting-started.md",
+  "sourceDirName": "vue",
+  "slug": "/vue/getting-started",
+  "permalink": "/docs/vue/getting-started",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HR199812/loom-css/tree/main/docs/vue/getting-started.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "React Getting Started",
+    "permalink": "/docs/react/getting-started"
+  },
+  "next": {
+    "title": "Design System Overview",
+    "permalink": "/docs/design-system/overview"
+  }
+}

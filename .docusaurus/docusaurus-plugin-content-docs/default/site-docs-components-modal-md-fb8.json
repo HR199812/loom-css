@@ -1,0 +1,26 @@
+{
+  "id": "components/modal",
+  "title": "Modal Component",
+  "description": "The Modal component provides a flexible dialog overlay for displaying content, forms, or confirmations.",
+  "source": "@site/docs/components/modal.md",
+  "sourceDirName": "components",
+  "slug": "/components/modal",
+  "permalink": "/docs/components/modal",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HR199812/loom-css/tree/main/docs/components/modal.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Card Component",
+    "permalink": "/docs/components/card"
+  },
+  "next": {
+    "title": "Navigation Component",
+    "permalink": "/docs/components/navigation"
+  }
+}

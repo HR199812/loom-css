@@ -1,0 +1,26 @@
+{
+  "id": "components/input",
+  "title": "Input Component",
+  "description": "The Input component provides a styled text input field with various configurations and states.",
+  "source": "@site/docs/components/input.md",
+  "sourceDirName": "components",
+  "slug": "/components/input",
+  "permalink": "/docs/components/input",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HR199812/loom-css/tree/main/docs/components/input.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Button Component",
+    "permalink": "/docs/components/button"
+  },
+  "next": {
+    "title": "Card Component",
+    "permalink": "/docs/components/card"
+  }
+}

@@ -1,0 +1,46 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.input {
+  border-radius: 6px;
+  padding: 8px 12px;
+  outline: none;
+  border: 1px solid #d1d5db;
+  transition: border-color 0.2s;
+  min-height: 32px;
+  font-size: 14px;
+}
+
+.info {
+  border-color: #60a5fa;
+}
+.success {
+  border-color: #22c55e;
+}
+.warning {
+  border-color: #facc15;
+}
+.danger {
+  border-color: #ef4444;
+}
+
+.input:focus {
+  border-width: 3px;
+}
+
+.error {
+  color: #ef4444;
+  font-size: 14px;
+  margin-top: 4px;
+  min-height: 16px;
+  padding-bottom: 2px;
+}

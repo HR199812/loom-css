@@ -1,0 +1,26 @@
+{
+  "id": "components/switch",
+  "title": "Switch Component",
+  "description": "A toggle switch component for boolean values.",
+  "source": "@site/docs/components/switch.md",
+  "sourceDirName": "components",
+  "slug": "/components/switch",
+  "permalink": "/docs/components/switch",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HR199812/loom-css/tree/main/docs/components/switch.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Sidebar Component",
+    "permalink": "/docs/components/sidebar"
+  },
+  "next": {
+    "title": "Table Component",
+    "permalink": "/docs/components/table"
+  }
+}

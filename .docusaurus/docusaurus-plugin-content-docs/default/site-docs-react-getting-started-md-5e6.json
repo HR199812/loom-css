@@ -1,0 +1,26 @@
+{
+  "id": "react/getting-started",
+  "title": "React Getting Started",
+  "description": "Get up and running with loom-css in your React application. This guide will walk you through the basics of using loom-css components in React.",
+  "source": "@site/docs/react/getting-started.md",
+  "sourceDirName": "react",
+  "slug": "/react/getting-started",
+  "permalink": "/docs/react/getting-started",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HR199812/loom-css/tree/main/docs/react/getting-started.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Installation",
+    "permalink": "/docs/installation"
+  },
+  "next": {
+    "title": "Vue Getting Started",
+    "permalink": "/docs/vue/getting-started"
+  }
+}

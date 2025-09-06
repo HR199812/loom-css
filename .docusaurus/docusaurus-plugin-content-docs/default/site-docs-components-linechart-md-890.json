@@ -1,0 +1,22 @@
+{
+  "id": "components/linechart",
+  "title": "Line Chart Component",
+  "description": "A component for displaying data in line chart format.",
+  "source": "@site/docs/components/linechart.md",
+  "sourceDirName": "components",
+  "slug": "/components/linechart",
+  "permalink": "/docs/components/linechart",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HR199812/loom-css/tree/main/docs/components/linechart.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Bar Chart Component",
+    "permalink": "/docs/components/barchart"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "components/sidebar",
+  "title": "Sidebar Component",
+  "description": "A collapsible sidebar navigation component.",
+  "source": "@site/docs/components/sidebar.md",
+  "sourceDirName": "components",
+  "slug": "/components/sidebar",
+  "permalink": "/docs/components/sidebar",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HR199812/loom-css/tree/main/docs/components/sidebar.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Separator Component",
+    "permalink": "/docs/components/separator"
+  },
+  "next": {
+    "title": "Switch Component",
+    "permalink": "/docs/components/switch"
+  }
+}

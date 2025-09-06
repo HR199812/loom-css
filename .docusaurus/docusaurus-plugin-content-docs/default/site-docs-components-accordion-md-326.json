@@ -1,0 +1,26 @@
+{
+  "id": "components/accordion",
+  "title": "Accordion Component",
+  "description": "A collapsible content component for organizing information in expandable sections.",
+  "source": "@site/docs/components/accordion.md",
+  "sourceDirName": "components",
+  "slug": "/components/accordion",
+  "permalink": "/docs/components/accordion",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HR199812/loom-css/tree/main/docs/components/accordion.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Navigation Component",
+    "permalink": "/docs/components/navigation"
+  },
+  "next": {
+    "title": "Alert Component",
+    "permalink": "/docs/components/alert"
+  }
+}

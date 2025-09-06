@@ -1,0 +1,26 @@
+{
+  "id": "components/paymentplan",
+  "title": "Payment Plan Component",
+  "description": "A component for displaying pricing and payment plans.",
+  "source": "@site/docs/components/paymentplan.md",
+  "sourceDirName": "components",
+  "slug": "/components/paymentplan",
+  "permalink": "/docs/components/paymentplan",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HR199812/loom-css/tree/main/docs/components/paymentplan.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Pagination Component",
+    "permalink": "/docs/components/pagination"
+  },
+  "next": {
+    "title": "Progress Bar Component",
+    "permalink": "/docs/components/progressbar"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "components/range",
+  "title": "Range Component",
+  "description": "A slider component for selecting values within a range.",
+  "source": "@site/docs/components/range.md",
+  "sourceDirName": "components",
+  "slug": "/components/range",
+  "permalink": "/docs/components/range",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HR199812/loom-css/tree/main/docs/components/range.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Radio Component",
+    "permalink": "/docs/components/radio"
+  },
+  "next": {
+    "title": "Search Input Component",
+    "permalink": "/docs/components/searchinput"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "components/chat",
+  "title": "Chat Component",
+  "description": "A component for displaying chat messages and conversations.",
+  "source": "@site/docs/components/chat.md",
+  "sourceDirName": "components",
+  "slug": "/components/chat",
+  "permalink": "/docs/components/chat",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/HR199812/loom-css/tree/main/docs/components/chat.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Carousel Component",
+    "permalink": "/docs/components/carousel"
+  },
+  "next": {
+    "title": "Checkbox Component",
+    "permalink": "/docs/components/checkbox"
+  }
+}
